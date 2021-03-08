@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<title>Home - SFZ Format</title>
+
+		<meta name="author" content="Karoryfer Samples and SFZ Format Team">
+		<meta name="web-author" content="RedTide and SFZ Format Team">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Atom Feeds -->
+		<link href="/atom.xml" rel="alternate" type="application/atom+xml" />
+
+		<!-- Favicon Generator Icons -->
+		<link rel="apple-touch-icon" sizes="152x152" href="/assets/ico/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/assets/ico/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/assets/ico/favicon-16x16.png">
+		<link rel="manifest" href="/assets/ico/site.webmanifest">
+		<link rel="mask-icon" href="/assets/ico/safari-pinned-tab.svg" color="#5bbad5">
+		<link rel="shortcut icon" href="/assets/ico/favicon.ico">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-config" content="/assets/ico/browserconfig.xml">
+		<meta name="theme-color" content="#ffffff">
+
+		<!-- Stylesheets -->
+		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
+		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
+
+		<!-- Font Awesome Icons -->
+		<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/solid.js"       integrity="sha384-Mf3ap7OwO+bjTkzM1RsrothLh38uKXvMWJ2TQPXGHqZcqfeI/cyCV+sfV0IDnBDq" crossorigin="anonymous"></script>
+		<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/brands.js"      integrity="sha384-b2GpqFrJizV0BUEdbrITdOA5HnxnlrErt7MlEERWd6NSJ32rHeibEvyyCuA13OAS" crossorigin="anonymous"></script>
+		<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/fontawesome.js" integrity="sha384-EYYaHDhIRoBhd/Ir/1fPnxg9rZLk/55lKtlNT5KrIcONoCS2kjf7ZWzMoCLLACeo" crossorigin="anonymous"></script>
+
+	</head>
+	<body>
+		<button onclick="topFunction()" id="scrollButton" title="Go to top">Top</button>
+		<a href="#content" class="sr-only">Skip to content</a>
+		<div class="container">
+
+			<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#222">
+				<a class="navbar-brand" href="/">
+					<img src="/assets/img/logo.png"
+					width="120" height="30" class="d-inline-block align-top" alt=""></a>
+
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarContent" aria-controls="navbarContent"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarContent">
+					<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
+
+	
+		
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarSyntax"
+								data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Syntax</a>
+							<div class="dropdown-menu" aria-labelledby="navbarSyntax">
+		
+			
+								<a class="dropdown-item"
+									href="/headers/">Headers</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/opcodes/">Opcodes</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/modulations/">Modulations</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/modulations/envelope_generators">Envelope Generators</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/modulations/lfo">LFO</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/extensions/midi_ccs">Extended MIDI CCs</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/misc/categories">Types & Categories</a>
+			
+		
+							</div>
+	
+						</li>
+
+	
+		
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarSoftware"
+								data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Software</a>
+							<div class="dropdown-menu" aria-labelledby="navbarSoftware">
+		
+			
+								<a class="dropdown-item"
+									href="https://sfzinstruments.github.io">Instruments</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/software/players">Players</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/software/tools">Tools</a>
+			
+		
+							</div>
+	
+						</li>
+
+	
+		
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarTutorials"
+								data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Tutorials</a>
+							<div class="dropdown-menu" aria-labelledby="navbarTutorials">
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/basics">Basics</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/basic_sfz_file">Basic / Template</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/sustained_note_basics">Sustained Note Basics</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/vibrato">Vibrato</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/legato">Legato</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/unison">Unison</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/range_extension">Range extension</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/subtractive_synths">Subtractive Synthesizers</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/drum_basics">Drum Basics</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/brush_stirs">Brush Stirs</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/sfz1_modulations">SFZ 1 Modulations</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/sfz2_modulations">SFZ 2 Modulations</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/lfo">Pitch LFO Examples</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/videos">Video Tutorials</a>
+			
+		
+							</div>
+	
+						</li>
+
+	
+						<li class="nav-item">
+							<a class="nav-link"
+								href="/news"> News</a>
+	
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link"
+								href="/search/">
+								Search</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			<div class="row mt-4" id="content">
+				<div class="col-md-9">
+					<article>
+<h3 id="welcome-to-sfzformatcom">
+        
+        
+          Welcome to SFZFormat.com! <a href="#welcome-to-sfzformatcom" class="toc-anchor">#</a>
+        
+        
+      </h3>
+
+<div class="jumbotron p-4 mb-3">
+
+  <p>This is the main reference point for anyone who wants to create virtual musical
+instruments using the SFZ format. Currently the SFZ 2 opcodes and ARIA extensions
+documented though some require more detail, and SFZ 2 opcodes not supported by
+ARIA still need to be added. There’s enough information to make complex SFZ
+instruments already, but we’ll continue to add more.</p>
+
+  <p>To make use of the SFZ format requires three things:</p>
+
+  <ul>
+    <li>Samples</li>
+    <li><a href="/software/players">SFZ player</a></li>
+    <li><a href="/tutorials/basic_sfz_file">SFZ file</a></li>
+  </ul>
+
+  <p>which tells the player how to use the samples. The SFZ file itself can be created
+using any text editor, though for more complex cases with hundreds or thousands
+of samples, additional tools can make this easier - some people use spreadsheets,
+and there are also dedicated <a href="/software/tools">SFZ creation tools</a>.</p>
+
+  <p>The SFZ format is a file format to define how a collection of samples are
+arranged for performance. The goal behind the SFZ format is to provide a free,
+simple, minimalistic and expandable format to arrange, distribute and use audio
+samples with the highest possible quality and the highest possible performance
+flexibility. Soundware, software and hardware developers can create, use and
+distribute the SFZ format files for free, for either free or commercial applications.</p>
+
+  <ul>
+    <li>Here’s a <a href="/tutorials/basic_sfz_file">basic SFZ file</a> you can copy to start your own</li>
+    <li>Here is the <a href="/headers">list of SFZ headers</a></li>
+    <li>The <a href="/opcodes/?v=1">list of SFZ 1 opcodes</a> can be found here.</li>
+    <li>You can browse the many SFZ 2 opcodes <a href="/opcodes/?v=2">starting here</a>.</li>
+    <li>A few opcodes have been added to <a href="/opcodes/?v=aria">ARIA / Sforzando</a> for more flexibility</li>
+  </ul>
+</div>
+    
+      <h3 id="what-sfz-is-not">
+        
+        
+          What SFZ is not <a href="#what-sfz-is-not" class="toc-anchor">#</a>
+        
+        
+      </h3>
+
+<p>To clarify, the term SFZ as used on this site does not mean a sforzando dynamic marking,
+and it also is not the same thing as a soundfont. Soundfonts are a completely different
+file format which includes both the samples and the definitions of sample behavior in the
+same binary file, while SFZ is a file format which only defines the behavior of musical
+instruments and does not include the sample content. SF2 may look a bit like SFZ visually,
+but that’s a coincidence.</p>
+    
+      <h3 id="making-instruments">
+        
+        
+          Making Instruments <a href="#making-instruments" class="toc-anchor">#</a>
+        
+        
+      </h3>
+
+<div class="jumbotron p-4 mb-3">
+
+  <p>Text guides on how to make a simple instrument, covering the essential opcodes</p>
+
+  <ul>
+    <li>
+      <p><a href="/tutorials/drum_basics">Drum basics</a> - covers <code class="language-plaintext highlighter-rouge">global</code>, <code class="language-plaintext highlighter-rouge">group</code> and
+<code class="language-plaintext highlighter-rouge">region</code> headers, <code class="language-plaintext highlighter-rouge">sample</code>, <code class="language-plaintext highlighter-rouge">key</code>, <code class="language-plaintext highlighter-rouge">lovel</code> / <code class="language-plaintext highlighter-rouge">hivel</code>, <code class="language-plaintext highlighter-rouge">amp_velcurve_N</code>,
+<code class="language-plaintext highlighter-rouge">seq_length</code>, <code class="language-plaintext highlighter-rouge">seq_position</code> and <code class="language-plaintext highlighter-rouge">lorand</code> / <code class="language-plaintext highlighter-rouge">hirand</code>.</p>
+    </li>
+    <li>
+      <p><a href="/tutorials/sustained_note_basics">Sustained note basics</a> - using a flute
+as an example.
+Adds <code class="language-plaintext highlighter-rouge">lokey</code> / <code class="language-plaintext highlighter-rouge">hikey</code>, <code class="language-plaintext highlighter-rouge">pitch_keycenter</code>, <code class="language-plaintext highlighter-rouge">xfin</code> / <code class="language-plaintext highlighter-rouge">xfout</code>, <code class="language-plaintext highlighter-rouge">locc</code> / <code class="language-plaintext highlighter-rouge">hicc</code>,
+<code class="language-plaintext highlighter-rouge">keyswitching</code>, <code class="language-plaintext highlighter-rouge">group</code>, <code class="language-plaintext highlighter-rouge">off_by</code> and <code class="language-plaintext highlighter-rouge">off_mode</code>.</p>
+    </li>
+  </ul>
+
+  <p>Some more advanced topics</p>
+
+  <ul>
+    <li>
+      <p><a href="/tutorials/vibrato">Vibrato</a> - typical string vibrato, humanized vibrato,
+asymmetrical vibrato, and even filter wobble.</p>
+    </li>
+    <li>
+      <p><a href="/tutorials/legato">Legato</a> - simulated legato and portamento as well as
+true sampled legato.</p>
+    </li>
+    <li>
+      <p><a href="/tutorials/cymbal_muting">Cymbal muting</a> - using <code class="language-plaintext highlighter-rouge">group</code>, <code class="language-plaintext highlighter-rouge">off_by</code>, <code class="language-plaintext highlighter-rouge">off_mode</code>
+and <code class="language-plaintext highlighter-rouge">polyphony</code> to make hi-hat and cymbal notes mute previous notes
+in a musically useful way.</p>
+    </li>
+    <li>
+      <p><a href="/tutorials/brush_stirs">Brush stirs</a> - two different approaches to brushed
+  drum techniques which produce a continuous sound rather than a hit.</p>
+    </li>
+  </ul>
+</div>
+					</article>
+				</div>
+				<div class="col-md-3">
+					<aside>
+
+						<div class="card border-dark mb-3">
+							<div class="card-header text-light"
+								style="background-color:#222">
+								<i class="fas fa-eye"
+									aria-hidden="true"></i>
+								Follow us
+							</div>
+							<div class="card-body" style="padding: 0.5rem">
+								<ul class="nav nav-pills flex-column">
+	<li class="nav-item">
+										<a class="nav-link" href="https://discord.gg/t7nrZ6d"
+											title="Discord Chat" style="padding: 0.35rem 0.25rem">
+										<i class="fab fa-discord fa-fw"
+										aria-hidden="true"></i>
+										Discord Chat</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://kiwiirc.com/nextclient/#irc://irc.freenode.net:+6697/#sfzformat"
+											title="Internet Relay Chat" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-hashtag fa-fw"
+										aria-hidden="true"></i>
+										IRC</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://github.com/sfzformat/"
+											title="GitHub Organization" style="padding: 0.35rem 0.25rem">
+										<i class="fab fa-github fa-fw"
+										aria-hidden="true"></i>
+										GitHub Organization</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="/atom.xml"
+											title="News Atom Feed" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-rss fa-fw"
+										aria-hidden="true"></i>
+										News Atom Feed</a>
+									</li>
+	
+								</ul>
+							</div>
+						</div>
+
+						<div class="card border-dark mb-3">
+							<div class="card-header text-light"
+								style="background-color:#222">
+								<i class="fas fa-link"
+									aria-hidden="true"></i>
+								Quick links
+							</div>
+							<div class="card-body" style="padding: 0.5rem">
+								<ul class="nav nav-pills flex-column">
+	<li class="nav-item">
+										<a class="nav-link" href="/legacy"
+											title="Old rgc:audio SFZ page" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-book fa-fw"
+										aria-hidden="true"></i>
+										Old rgc:audio SFZ page</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="http://www.drealm.info/sfz/"
+											title="Peter L. Jones' SFZ page" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-book fa-fw"
+										aria-hidden="true"></i>
+										Peter L. Jones' SFZ page</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://www.kvraudio.com/forum/viewtopic.php?f=42&t=508861"
+											title="KVR Forum SFZ post" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-users fa-fw"
+										aria-hidden="true"></i>
+										KVR Forum SFZ post</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://www.plogue.com/plgfrms/viewforum.php?f=14"
+											title="Plogue Forum" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-users fa-fw"
+										aria-hidden="true"></i>
+										Plogue Forum</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://sfzinstruments.github.io/"
+											title="Free SFZ Instruments" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-download fa-fw"
+										aria-hidden="true"></i>
+										Free SFZ Instruments</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://github.com/sfz/tests/"
+											title="rgc:audio SFZ test suite" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-download fa-fw"
+										aria-hidden="true"></i>
+										rgc:audio SFZ test suite</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://github.com/sfz/opcode-suggestions/"
+											title="Opcode suggestions" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-lightbulb fa-fw"
+										aria-hidden="true"></i>
+										Opcode suggestions</a>
+									</li>
+	
+								</ul>
+							</div>
+						</div>
+
+
+					</aside>
+				</div>
+			</div>
+			<hr>
+			<footer>
+				<p>
+					This site is open source.
+					<a href="https://github.com/sfzformat/sfzformat.github.io/edit/source/index.md">
+					Improve this page</a>
+				</p>
+			</footer>
+
+		</div>
+		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
+		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
+		<script>
+			$(document).ready(function(){
+			$('pre').addClass('prettyprint lang-sfz');
+			prettyPrint();
+			});
+		</script>
+		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+		<script>
+		$(document).on('click', '[data-toggle="lightbox"]', function(event) {
+			event.preventDefault();
+			$(this).ekkoLightbox({
+				alwaysShowClose: true
+			});
+		});
+		</script>
+
+
+
+	</body>
+</html>

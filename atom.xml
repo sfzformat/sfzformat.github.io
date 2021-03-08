@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<title>SFZ Format News</title>
+	<link href="https://sfzformat.github.io/atom.xml" rel="self"/>
+	<icon>https://sfzformat.github.io/assets/ico/favicon.ico</icon>
+	<link href="https://sfzformat.github.io/"/>
+	<updated>2021-03-08T09:09:55+00:00</updated>
+	<id>https://sfzformat.github.io/</id>
+
+	<entry>
+		<title>Opcodes page update</title>
+		<author><name>redtide</name></author>
+		<link href="https://sfzformat.github.io/news/2020/10/16/opcodes-page-update.html"/>
+		<published>2020-10-16T19:59:58+00:00</published>
+		<id>https://sfzformat.github.io/news/2020/10/16/opcodes-page-update</id>
+		<content type="html">&lt;p&gt;For those who missed it we have some updates on the website, mainly regarding
+the opcodes page. Recently I’ve added a &lt;a href=&quot;https://bootstrap-table.com&quot;&gt;javascript library&lt;/a&gt; that permits tables
+column sorting, and now with an awesome contribution from @jpcima also a script
+to filter opcode names, versions and categories. Hope you’ll find them handy!&lt;/p&gt;
+
+</content>
+	</entry>
+
+	<entry>
+		<title>New tutorial and opcode additions</title>
+		<author><name>redtide</name></author>
+		<link href="https://sfzformat.github.io/news/2020/03/17/new-tutorial-and-opcode-additions.html"/>
+		<published>2020-03-17T00:00:00+00:00</published>
+		<id>https://sfzformat.github.io/news/2020/03/17/new-tutorial-and-opcode-additions</id>
+		<content type="html">&lt;p&gt;A new tutorial about &lt;a href=&quot;https://sfzformat.com/tutorials/subtractive_synths&quot;&gt;subtractive synthesizers&lt;/a&gt; was shared by DSmolken’s
+sample instruments experience applied in the &lt;a href=&quot;https://github.com/sfzinstruments/karoryfer.caveman-cosmonaut&quot;&gt;Caveman Cosmonaut&lt;/a&gt; sample library.&lt;br /&gt;
+Some fixes and additions were made in our opcode database and in software as well,
+like the Windows &lt;a href=&quot;https://openmpt.org/&quot;&gt;OpenMPT&lt;/a&gt; music tracker by sagamusix.&lt;br /&gt;
+New contributions was provided by other users like jisaacstone,
+and a big contribution from jpcima for the &lt;a href=&quot;https://sfzformat.com/opcodes/type#cakewalk-implementation&quot;&gt;effects&lt;/a&gt; section.&lt;br /&gt;
+Now we have also a new page for convenience
+that lists &lt;a href=&quot;https://sfzformat.com/misc/all_opcodes&quot;&gt;all opcodes&lt;/a&gt; present in our database.&lt;/p&gt;
+
+</content>
+	</entry>
+
+	<entry>
+		<title>New year, new work in progress</title>
+		<author><name>redtide</name></author>
+		<link href="https://sfzformat.github.io/news/2020/01/31/new-year-new-work-in-progress.html"/>
+		<published>2020-01-31T00:00:00+00:00</published>
+		<id>https://sfzformat.github.io/news/2020/01/31/new-year-new-work-in-progress</id>
+		<content type="html">&lt;p&gt;The most relevant additions on the website for this month were &lt;a href=&quot;https://sfzinstruments.github.io&quot;&gt;Instruments&lt;/a&gt;
+and &lt;a href=&quot;/modulations/&quot;&gt;Modulations&lt;/a&gt; sections, adding slowly one by one some sample instruments
+libraries created and freely distribuited over the net, and documenting in a
+generic way the various modulations used in SFZ.
+Some new opcodes were also added in our database, starting from some modulation
+aliases like amplitude_ccN, pan_ccN and tune_ccN to the recent fil_gain.
+I would like to thank some people who contributed to the site, like falkTX
+for adding our news feed on &lt;a href=&quot;https://planet.linuxaudio.org/&quot;&gt;Linuxaudio Planet&lt;/a&gt;, jpcima, MatFluor, PaulFd and sfw.
+This website is an opensource non profit project, I hope to see more people
+involved in the future to help make it grow.&lt;/p&gt;
+
+</content>
+	</entry>
+
+	<entry>
+		<title>Happy new year!</title>
+		<author><name>RedTide</name></author>
+		<link href="https://sfzformat.github.io/news/2019/12/29/happy-new-year.html"/>
+		<published>2019-12-29T00:00:00+00:00</published>
+		<id>https://sfzformat.github.io/news/2019/12/29/happy-new-year</id>
+		<content type="html">&lt;p&gt;Here we are with the latest relevant updates, the last ones for this year:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Added &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*_mod&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*_dynamic&lt;/code&gt; opcodes&lt;/li&gt;
+  &lt;li&gt;Added &lt;a href=&quot;/opcodes/?v=cakewalk&quot;&gt;Cakewalk SFZv2 opcodes&lt;/a&gt; (work in progress) page&lt;/li&gt;
+  &lt;li&gt;Added the SFZ test suite for sample instruments developers in homepage&lt;/li&gt;
+  &lt;li&gt;Improved &lt;a href=&quot;/assets/js/prettify/lang-sfz.js&quot;&gt;SFZ syntax highlighting&lt;/a&gt; in &lt;a href=&quot;https://github.com/google/code-prettify&quot;&gt;Google Prettify&lt;/a&gt; for all pages&lt;/li&gt;
+  &lt;li&gt;Search now works correctly, though it is slow and needs some more improvements&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Happy new year!&lt;/p&gt;
+
+</content>
+	</entry>
+
+	<entry>
+		<title>Legato tutorial</title>
+		<author><name>DSmolken</name></author>
+		<link href="https://sfzformat.github.io/news/2019/11/21/legato-tutorial.html"/>
+		<published>2019-11-21T00:00:00+00:00</published>
+		<id>https://sfzformat.github.io/news/2019/11/21/legato-tutorial</id>
+		<content type="html">&lt;p&gt;The legato tutorial has been expanded from one simple example to include
+simulated legato, simulated portamento, and true sampled legato.&lt;/p&gt;
+</content>
+	</entry>
+
+	<entry>
+		<title>New players and tutorial</title>
+		<author><name>RedTide</name></author>
+		<link href="https://sfzformat.github.io/news/2019/11/16/new-players-and-tutorial.html"/>
+		<published>2019-11-16T00:00:00+00:00</published>
+		<id>https://sfzformat.github.io/news/2019/11/16/new-players-and-tutorial</id>
+		<content type="html">&lt;p&gt;New applications were added to the players list recently:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://hise.audio/&quot;&gt;HISE&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://sfz.tools/sfizz/&quot;&gt;sfizz&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/swesterfeld/liquidsfz&quot;&gt;liquidsfz&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;and a new tutorial from &lt;a href=&quot;https://www.sonoj.org/&quot;&gt;Sonoj 2019 Convention&lt;/a&gt; on &lt;a href=&quot;https://media.ccc.de/v/sonoj2019-1904-recording-samples#t=1469&quot;&gt;how to recording samples
+using Ardour and LinuxSampler&lt;/a&gt; by &lt;a href=&quot;https://media.ccc.de/search?q=Christoph+Kuhr&quot;&gt;Christoph Kuhr&lt;/a&gt; to our
+&lt;a href=&quot;https://sfzformat.com/tutorials/videos&quot;&gt;Video tutorials&lt;/a&gt; section.&lt;/p&gt;
+
+&lt;p&gt;Thanks to &lt;a href=&quot;https://github.com/swesterfeld&quot;&gt;Stefan Westerfeld&lt;/a&gt; for our first GitHub pull request! And to
+Sonoj organization for the video tutorial contribuition.&lt;/p&gt;
+
+&lt;p&gt;Last but not least, for those like me who prefer &lt;a href=&quot;https://en.wikipedia.org/wiki/Internet_Relay_Chat&quot;&gt;IRC&lt;/a&gt; we have now also an
+&lt;a href=&quot;https://kiwiirc.com/nextclient/#irc://irc.freenode.net:+6697/#sfzformat&quot;&gt;IRC channel&lt;/a&gt; on &lt;a href=&quot;https://freenode.net/&quot;&gt;freenode&lt;/a&gt; server.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/join&lt;/code&gt; us!&lt;/p&gt;
+
+</content>
+	</entry>
+
+	<entry>
+		<title>SFZ page on Italian Wikipedia</title>
+		<author><name>RedTide</name></author>
+		<link href="https://sfzformat.github.io/news/2019/09/16/sfz-page-on-italian-wikipedia.html"/>
+		<published>2019-09-16T00:00:00+00:00</published>
+		<id>https://sfzformat.github.io/news/2019/09/16/sfz-page-on-italian-wikipedia</id>
+		<content type="html">&lt;p&gt;A new page about the SFZ format has been added to the &lt;a href=&quot;https://it.wikipedia.org/wiki/SFZ_(formato_di_file)&quot;&gt;Italian Wikipedia&lt;/a&gt;.
+Let’s grow!&lt;/p&gt;
+
+</content>
+	</entry>
+
+	<entry>
+		<title>Modulations Explained</title>
+		<author><name>DSmolken</name></author>
+		<link href="https://sfzformat.github.io/news/2019/08/01/modulation_explained.html"/>
+		<published>2019-08-01T00:00:00+00:00</published>
+		<id>https://sfzformat.github.io/news/2019/08/01/modulation_explained</id>
+		<content type="html">&lt;p&gt;We have two new articles explaining the modulations possible in &lt;a href=&quot;/tutorials/sfz1_modulations&quot;&gt;SFZ1&lt;/a&gt;
+and &lt;a href=&quot;/tutorials/sfz2_modulations&quot;&gt;SFZ2&lt;/a&gt;. Hopefully it will now be much easier to understand
+what’s possible under each spec level, and just what those complex SFZ2 LFOs and envelopes can
+and can’t do.&lt;/p&gt;
+</content>
+	</entry>
+
+	<entry>
+		<title>New Tutorial</title>
+		<author><name>DSmolken</name></author>
+		<link href="https://sfzformat.github.io/news/2019/07/25/new-tutorial.html"/>
+		<published>2019-07-25T00:00:00+00:00</published>
+		<id>https://sfzformat.github.io/news/2019/07/25/new-tutorial</id>
+		<content type="html">&lt;p&gt;We’ve published a &lt;a href=&quot;/tutorials/brush_stirs&quot;&gt;new tutorial&lt;/a&gt; explaining how to use samples to
+model brushed drum techniques which produce a continuous sound
+rather than a discrete hit. Admittedly, this is a rather niche technique not only
+in the samples world but also in real-world music, mainly used in
+jazz and some indie music. Next we plan to expand the &lt;a href=&quot;/tutorials/vibrato&quot;&gt;vibrato tutorial&lt;/a&gt;,
+which is currently only a simple code example.&lt;/p&gt;
+
+&lt;p&gt;Minor updates:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;global_label, master_label, group_label and region_label opcodes added.&lt;/li&gt;
+  &lt;li&gt;Added Carla and Bliss Sampler to SFZ players, updated TAL Sampler info.&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+	</entry>
+
+	<entry>
+		<title>New Website Launched</title>
+		<author><name>RedTide</name></author>
+		<link href="https://sfzformat.github.io/news/2019/04/23/new-website-launched.html"/>
+		<published>2019-04-23T00:00:00+00:00</published>
+		<id>https://sfzformat.github.io/news/2019/04/23/new-website-launched</id>
+		<content type="html">&lt;p&gt;We’re proud to announce a new website!&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Built on &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Most content is authored in &lt;a href=&quot;http://daringfireball.net/projects/markdown/&quot;&gt;Markdown&lt;/a&gt; format.&lt;/li&gt;
+  &lt;li&gt;Utilizes &lt;a href=&quot;http://getbootstrap.com/&quot;&gt;Bootstrap&lt;/a&gt; and &lt;a href=&quot;https://sass-lang.com/&quot;&gt;SASS&lt;/a&gt; for easy skinning and responsive design,
+making the website available to mobile devices.&lt;/li&gt;
+  &lt;li&gt;Utilizes &lt;a href=&quot;http://fontawesome.io/&quot;&gt;FontAwesome&lt;/a&gt; and &lt;a href=&quot;https://realfavicongenerator.net/&quot;&gt;Favicon Generator&lt;/a&gt; for content and website icons.&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+	</entry>
+
+</feed>

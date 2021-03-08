@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<title>Brush stirs - SFZ Format</title>
+
+		<meta name="author" content="Karoryfer Samples and SFZ Format Team">
+		<meta name="web-author" content="RedTide and SFZ Format Team">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Atom Feeds -->
+		<link href="/atom.xml" rel="alternate" type="application/atom+xml" />
+
+		<!-- Favicon Generator Icons -->
+		<link rel="apple-touch-icon" sizes="152x152" href="/assets/ico/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/assets/ico/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/assets/ico/favicon-16x16.png">
+		<link rel="manifest" href="/assets/ico/site.webmanifest">
+		<link rel="mask-icon" href="/assets/ico/safari-pinned-tab.svg" color="#5bbad5">
+		<link rel="shortcut icon" href="/assets/ico/favicon.ico">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-config" content="/assets/ico/browserconfig.xml">
+		<meta name="theme-color" content="#ffffff">
+
+		<!-- Stylesheets -->
+		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
+		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
+
+		<!-- Font Awesome Icons -->
+		<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/solid.js"       integrity="sha384-Mf3ap7OwO+bjTkzM1RsrothLh38uKXvMWJ2TQPXGHqZcqfeI/cyCV+sfV0IDnBDq" crossorigin="anonymous"></script>
+		<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/brands.js"      integrity="sha384-b2GpqFrJizV0BUEdbrITdOA5HnxnlrErt7MlEERWd6NSJ32rHeibEvyyCuA13OAS" crossorigin="anonymous"></script>
+		<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/fontawesome.js" integrity="sha384-EYYaHDhIRoBhd/Ir/1fPnxg9rZLk/55lKtlNT5KrIcONoCS2kjf7ZWzMoCLLACeo" crossorigin="anonymous"></script>
+
+	</head>
+
+	<body>
+
+		<button onclick="topFunction()" id="scrollButton" title="Go to top">Top</button>
+		<a href="#content" class="sr-only">Skip to content</a>
+		<div class="container">
+
+			<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#222">
+				<a class="navbar-brand" href="/">
+					<img src="/assets/img/logo.png"
+					width="120" height="30" class="d-inline-block align-top" alt=""></a>
+
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarContent" aria-controls="navbarContent"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarContent">
+					<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
+
+	
+		
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarSyntax"
+								data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Syntax</a>
+							<div class="dropdown-menu" aria-labelledby="navbarSyntax">
+		
+			
+								<a class="dropdown-item"
+									href="/headers/">Headers</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/opcodes/">Opcodes</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/modulations/">Modulations</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/modulations/envelope_generators">Envelope Generators</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/modulations/lfo">LFO</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/extensions/midi_ccs">Extended MIDI CCs</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/misc/categories">Types & Categories</a>
+			
+		
+							</div>
+	
+						</li>
+
+	
+		
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarSoftware"
+								data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Software</a>
+							<div class="dropdown-menu" aria-labelledby="navbarSoftware">
+		
+			
+								<a class="dropdown-item"
+									href="https://sfzinstruments.github.io">Instruments</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/software/players">Players</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/software/tools">Tools</a>
+			
+		
+							</div>
+	
+						</li>
+
+	
+		
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarTutorials"
+								data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Tutorials</a>
+							<div class="dropdown-menu" aria-labelledby="navbarTutorials">
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/basics">Basics</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/basic_sfz_file">Basic / Template</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/sustained_note_basics">Sustained Note Basics</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/vibrato">Vibrato</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/legato">Legato</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/unison">Unison</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/range_extension">Range extension</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/subtractive_synths">Subtractive Synthesizers</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/drum_basics">Drum Basics</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/brush_stirs">Brush Stirs</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/sfz1_modulations">SFZ 1 Modulations</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/sfz2_modulations">SFZ 2 Modulations</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/lfo">Pitch LFO Examples</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/videos">Video Tutorials</a>
+			
+		
+							</div>
+	
+						</li>
+
+	
+						<li class="nav-item">
+							<a class="nav-link"
+								href="/news"> News</a>
+	
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link"
+								href="/search/">
+								Search</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			<div class="row mt-4" id="content">
+				<div class="col-md-9">
+					<article><h1>Brush stirs</h1><p>Not all drum sounds are hits which can be used in the usual way described in our <a href="/tutorials/drum_basics">drum basics</a>
+article. One major exception are brush techniques which involve scraping the
+brush across a drum head, often in a circle. If you are not sure what this
+looks or sounds like, <a href="https://www.youtube.com/watch?v=R982CdhRF9E">this video is a good guide</a>.
+These techniques are called swirls or stirs, and for the purpose of this article
+we’ll call them stirs. As the sound changes in intensity, and the duration
+of the scrapes needs to fit the tempo and rhythm of the song, sampling them
+requires a different approach to the usual drum hits. The two common approaches
+are to completely ignore this technique and not sample it at all, and to record
+loops to fit various tempos.</p>
+
+<p>This article describes another approach. The key principle here
+is that stirs are a noisy, nonlinear sound with a lot of randomness, which
+makes them very easy to crossfade or loop with no phase issues. Therefore,
+instead of trying to record stirs performed in a realistic way, we propose
+recording long, unrealistically steady stirs with no perceptible rhythm or
+expression, and then using those samples as source material for building up
+a musical stir.</p>
+      <h2 id="recording-the-source-material">
+        
+        
+          Recording the source material <a href="#recording-the-source-material" class="toc-anchor">#</a>
+        
+        
+      </h2>
+
+<p>For the purposes of this example, let’s assume the source stirs are recorded
+at four speeds, with 1 being the slowest and 4 being the fastest. Speed 1 is
+slow enough that a full circle around the head of the drum is completed in
+more than 4 seconds. That’s enough to fill a measure at 60 bpm and still have
+some sound left, so the user can start the next stir before the previous one
+ends, and thus achieve a continuous sound. Speed 4 is several circles per
+second, to match the speed at which the brush would be moving during the peak
+of an aggressive stir. Making the sound steady at this speed is a challenge.</p>
+
+<p>As for how long the recordings need to be, speed 1 needs to be long enough
+for the longest stir we want to be able to make. However, if tuning controls
+are to be applied, it’s important to remember that pitching a sample up
+shortens it, so if the tuning range is to extend to one octave up, then a
+10-second sample is the minimum to make a 5-second stir. Speeds 3 and 4
+are not used thorughout the duration of a stir but only for peaks, and for
+the purposes of this example they can be half the length of speed 1.</p>
+    
+      <h2 id="simple-stir-model">
+        
+        
+          Simple stir model <a href="#simple-stir-model" class="toc-anchor">#</a>
+        
+        
+      </h2>
+
+<p>We can make a very simple stir using speed 1 by playing the sample with
+<a href="/opcodes/loop_mode">loop_mode</a> set to one_shot, like we normally would set it for a
+drum hit, and using a simple <a href="/modulations/envelope_generators#sfz-1-egs">volume envelope</a>
+to fade this sample in over a time, and then fade it out.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;region&gt;key=26 loop_mode=one_shot
+sample=snare_stir_speed_1.wav
+ampeg_attack=1.0 ampeg_decay=1.0 ampeg_sustain=0
+</code></pre></div></div>
+
+<p>The resulting volume envelope will look something like this. The illustrations are
+not precise, only general shapes.</p>
+
+<p><img src="/assets/img/tutorials/brush_stirs/stir1.jpg" class="img-fluid" alt="Simple stir envelope" /></p>
+
+<p>This is a good start, and we can add expression and realism by layering a
+faster speed on top of it near the stir’s peak, with half the duration
+of the base layer. We use ampeg_delay to delay the start of the second
+layer by the same amount, so the peaks of both layers align in time.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;region&gt;key=26 loop_mode=one_shot
+sample=snare_stir_speed_1.wav
+ampeg_attack=1.0 ampeg_decay=1.0 ampeg_sustain=0
+&lt;region&gt;key=26 loop_mode=one_shot
+sample=snare_stir_speed_3.wav
+ampeg_delay=0.5 ampeg_attack=0.5 ampeg_decay=0.5 ampeg_sustain=0
+</code></pre></div></div>
+
+<p><img src="/assets/img/tutorials/brush_stirs/stir2.jpg" class="img-fluid" alt="Two layer stir envelopes" /></p>
+    
+      <h2 id="modulating-stir-duration">
+        
+        
+          Modulating stir duration <a href="#modulating-stir-duration" class="toc-anchor">#</a>
+        
+        
+      </h2>
+
+<p>This has a fixed duration and is not flexible, but the stir length can
+easily be modulated by a single CC parameter changing all the
+envelope durations. Extremely short stirs, lasting only a small fraction
+of a second, are obviously not going to sound realistic, so we can use
+a minimum value to prevent that. Let’s use CC1 (standard mod wheel).</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;region&gt;key=26 loop_mode=one_shot
+sample=snare_stir_speed_1.wav
+ampeg_attack=0.1 ampeg_decay=0.1 ampeg_sustain=0
+ampeg_attackcc1=0.4 ampeg_decaycc1=0.4
+&lt;region&gt;key=26 loop_mode=one_shot
+sample=snare_stir_speed_3.wav
+ampeg_delay=0.05 ampeg_attack=0.05 ampeg_decay=0.05 ampeg_sustain=0
+ampeg_delaycc1=0.25 ampeg_attackcc1=0.25 ampeg_decaycc1=0.25
+</code></pre></div></div>
+    
+      <h2 id="making-the-shape-more-realistic">
+        
+        
+          Making the shape more realistic <a href="#making-the-shape-more-realistic" class="toc-anchor">#</a>
+        
+        
+      </h2>
+
+<p>Drummers testing the above model have asked for some adjustments to
+make it sound more realistic. One is to make the first half of the base
+layer steadier. This can be done very easily by shortening the attack
+and adding a hold time to the envelope, ensuring that they still add up
+to the same amount of time that the faster layer’s delay and attack,
+so the peak will remain aligned at all values of the modulation
+parameter. The attack stage should generally be shorter than the hold
+stage.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;region&gt;key=26 loop_mode=one_shot
+sample=snare_stir_speed_1.wav
+ampeg_attack=0.05 ampeg_hold=0.05 ampeg_decay=0.1 ampeg_sustain=0
+ampeg_attackcc1=0.05 ampeg_holdcc1=0.35 ampeg_decaycc1=0.4
+&lt;region&gt;key=26 loop_mode=one_shot
+sample=snare_stir_speed_3.wav
+ampeg_delay=0.05 ampeg_attack=0.05 ampeg_decay=0.05 ampeg_sustain=0
+ampeg_delaycc1=0.25 ampeg_attackcc1=0.25 ampeg_decaycc1=0.25
+</code></pre></div></div>
+
+<p><img src="/assets/img/tutorials/brush_stirs/stir3.jpg" class="img-fluid" alt="Stir envelopes using hold in base layer" /></p>
+
+<p>Also, the peak should be sharper and more accented than it is
+with linear envelopes. Changing the envelope curves accomplishes this,
+though the initial attack envelope of the base layer can remain
+linear. The below values seem like a decent start.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;region&gt;key=26 loop_mode=one_shot
+sample=snare_stir_speed_1.wav
+ampeg_attack=0.05 ampeg_hold=0.05 ampeg_decay=0.1 ampeg_sustain=0
+ampeg_attackcc1=0.05 ampeg_holdcc1=0.35 ampeg_decaycc1=0.4
+ampeg_attack_shape=0.0 ampeg_decay_shape=-1.4
+&lt;region&gt;key=26 loop_mode=one_shot
+sample=snare_stir_speed_3.wav
+ampeg_delay=0.05 ampeg_attack=0.05 ampeg_decay=0.05 ampeg_sustain=0
+ampeg_delaycc1=0.25 ampeg_attackcc1=0.25 ampeg_decaycc1=0.25
+ampeg_attack_shape=3.5 ampeg_decay_shape=-1.4
+</code></pre></div></div>
+
+<p><img src="/assets/img/tutorials/brush_stirs/stir4.jpg" class="img-fluid" alt="Stir envelopes with curves" /></p>
+    
+      <h2 id="adjusting-the-envelope-shapes">
+        
+        
+          Adjusting the envelope shapes <a href="#adjusting-the-envelope-shapes" class="toc-anchor">#</a>
+        
+        
+      </h2>
+
+<p>The above fixed envelope shapes are good for medium tempos and energy levels,
+but for slow tempos the flat envelope shapes actually work quite well, and
+more energetic tracks might sound better with even sharper envelope peaks. It
+would be nice to adjust the envelope curve shapes with MIDI CC, but it is not
+currently possible to do this. It’s possible to work around this by crossfading
+sharp-envelope and flat-envelope regions, or use locc/hicc to select between
+several pre-baked <a href="/opcodes/ampeg_attack_shape">envelope shapes</a>. Here’s an
+example of the latter method.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;group&gt;key=26 loop_mode=one_shot
+
+&lt;region&gt;hicc100=42
+sample=snare_stir_speed_1.wav
+ampeg_attack=0.05 ampeg_hold=0.05 ampeg_decay=0.1 ampeg_sustain=0
+ampeg_attackcc1=0.05 ampeg_holdcc1=0.35 ampeg_decaycc1=0.4
+ampeg_attack_shape=0.0 ampeg_decay_shape=0.0
+&lt;region&gt;hicc100=42
+sample=snare_stir_speed_3.wav
+ampeg_delay=0.05 ampeg_attack=0.05 ampeg_decay=0.05 ampeg_sustain=0
+ampeg_delaycc1=0.25 ampeg_attackcc1=0.25 ampeg_decaycc1=0.25
+ampeg_attack_shape=0.0 ampeg_decay_shape=0.0
+
+&lt;region&gt;locc100=43 hicc100=86
+sample=snare_stir_speed_1.wav
+ampeg_attack=0.05 ampeg_hold=0.05 ampeg_decay=0.1 ampeg_sustain=0
+ampeg_attackcc1=0.05 ampeg_holdcc1=0.35 ampeg_decaycc1=0.4
+ampeg_attack_shape=0.0 ampeg_decay_shape=-1.4
+&lt;region&gt;locc100=43 hicc100=86
+sample=snare_stir_speed_3.wav
+ampeg_delay=0.05 ampeg_attack=0.05 ampeg_decay=0.05 ampeg_sustain=0
+ampeg_delaycc1=0.25 ampeg_attackcc1=0.25 ampeg_decaycc1=0.25
+ampeg_attack_shape=3.5 ampeg_decay_shape=-1.4
+
+&lt;region&gt;locc100=87
+sample=snare_stir_speed_1.wav
+ampeg_attack=0.05 ampeg_hold=0.05 ampeg_decay=0.1 ampeg_sustain=0
+ampeg_attackcc1=0.05 ampeg_holdcc1=0.35 ampeg_decaycc1=0.4
+ampeg_attack_shape=0.0 ampeg_decay_shape=-3.5
+&lt;region&gt;locc100=87
+sample=snare_stir_speed_3.wav
+ampeg_delay=0.05 ampeg_attack=0.05 ampeg_decay=0.05 ampeg_sustain=0
+ampeg_delaycc1=0.25 ampeg_attackcc1=0.25 ampeg_decaycc1=0.25
+ampeg_attack_shape=5.2 ampeg_decay_shape=-3.5
+</code></pre></div></div>
+    
+      <h2 id="adding-ornaments">
+        
+        
+          Adding ornaments <a href="#adding-ornaments" class="toc-anchor">#</a>
+        
+        
+      </h2>
+
+<p>So far, we have a stir with adjustable duration and shape which peaks
+halfway through. More complex patterns can have more than one peak,
+though. A simple way to emulate that is to use a differnet MIDI note
+to trigger short ornaments which will add a brief extra sound to the
+stir, thus emulating a momentary acceleration of the brush. We can use
+one of the higher stir speeds for this.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;group&gt;key=27 loop_mode=one_shot sample=snare_stir_speed_2.wav
+ampeg_attack=0.05 ampeg_decay=0.05 ampeg_sustain=0
+ampeg_attackcc1=0.2 ampeg_decaycc1=0.2
+
+&lt;region&gt;hicc100=42
+ampeg_attack_shape=0.0 ampeg_decay_shape=0.0
+
+&lt;region&gt;hicc100=42
+ampeg_attack_shape=3.5 ampeg_decay_shape=-1.4
+
+&lt;region&gt;hicc100=42
+ampeg_attack_shape=5.2 ampeg_decay_shape=-3.5
+</code></pre></div></div>
+    
+      <h2 id="accents">
+        
+        
+          Accents <a href="#accents" class="toc-anchor">#</a>
+        
+        
+      </h2>
+
+<p>We can also create accents, which are similar to the typical stir but peak much
+more quickly and use faster speeds. In pracitce, they can be used either as
+short, aggressive stirs, or added on top of basic stirs to create more complex
+patterns. The difference in the SFZ here is that the attack curve shape can be applied to
+the attack portion as well, and there is no hold stage in the envelope.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;group&gt;key=28 loop_mode=one_shot
+
+&lt;region&gt;hicc100=42
+sample=snare_stir_speed_2.wav
+ampeg_attack=0.05 ampeg_decay=0.1 ampeg_sustain=0
+ampeg_attackcc1=0.05 ampeg_decaycc1=0.4
+ampeg_attack_shape=0.0 ampeg_decay_shape=0.0
+&lt;region&gt;hicc100=42
+sample=snare_stir_speed_4.wav
+ampeg_attack=0.05 ampeg_decay=0.05 ampeg_sustain=0
+ampeg_attackcc1=0.05 ampeg_decaycc1=0.2
+ampeg_attack_shape=0.0 ampeg_decay_shape=0.0
+
+&lt;region&gt;locc100=43 hicc100=86
+sample=snare_stir_speed_2.wav
+ampeg_attack=0.05 ampeg_decay=0.1 ampeg_sustain=0
+ampeg_attackcc1=0.05 ampeg_decaycc1=0.4
+ampeg_attack_shape=3.5 ampeg_decay_shape=-1.4
+&lt;region&gt;locc100=43 hicc100=86
+sample=snare_stir_speed_4.wav
+ampeg_attack=0.05 ampeg_decay=0.05 ampeg_sustain=0
+ampeg_attackcc1=0.05 ampeg_decaycc1=0.2
+ampeg_attack_shape=3.5 ampeg_decay_shape=-1.4
+
+&lt;region&gt;locc100=87
+sample=snare_stir_speed_2.wav
+ampeg_attack=0.05 ampeg_decay=0.1 ampeg_sustain=0
+ampeg_attackcc1=0.05 ampeg_decaycc1=0.4
+ampeg_attack_shape=5.2 ampeg_decay_shape=-3.5
+&lt;region&gt;locc100=87
+sample=snare_stir_speed_4.wav
+ampeg_attack=0.05 ampeg_decay=0.05 ampeg_sustain=0
+ampeg_attackcc1=0.05 ampeg_decaycc1=0.2
+ampeg_attack_shape=5.2 ampeg_decay_shape=-3.5
+</code></pre></div></div>
+    
+      <h2 id="muting">
+        
+        
+          Muting <a href="#muting" class="toc-anchor">#</a>
+        
+        
+      </h2>
+
+<p>As all the above sounds have loop_mode set to one_shot, triggering a note causes
+the sound to play until the volume envelope drops to zero. If ending a stir
+earlier than that is required, we can use polyphony groups. The <a href="/opcodes/group">group</a> and <a href="/opcodes/off_by">off_by</a>
+opcodes are the key ones here. We can use them to make stirs self-mute, so that
+triggering a new stir will mute any previously playing stirs, as well as add a key
+which produces no sound, using <a href="/opcodes/sample">silence instead of a sample</a>, but
+is in the same mute groups, so triggering this key will mute any stir or accent
+currently playing. This key can be used to stop stirs early.</p>
+
+<p>Note that, as usual, separate groups are needed for
+layers which are to play simultaneously, and if there are multiple microphone
+positions then those would need separate groups as well. In the below example we
+also have stirs mute accents, and vice versa, although the ornaments are left
+out of the mute groups and can be layered on top of other sounds without muting them.
+For a more sophisticated use of mute groups with other pieces of the drum kit,
+please see <a href="/tutorials/cymbal_muting">cymbal muting</a>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;global&gt;loop_mode=one_shot off_mode=normal
+ampeg_release=0.1 ampeg_releasecc1=0.2
+
+&lt;group&gt;key=26
+
+&lt;region&gt;hicc100=42
+sample=snare_stir_speed_1.wav
+ampeg_attack=0.05 ampeg_hold=0.05 ampeg_decay=0.1 ampeg_sustain=0
+ampeg_attackcc1=0.05 ampeg_holdcc1=0.35 ampeg_decaycc1=0.4
+ampeg_attack_shape=0.0 ampeg_decay_shape=0.0
+group=1 off_by=1
+&lt;region&gt;hicc100=42
+sample=snare_stir_speed_3.wav
+ampeg_delay=0.05 ampeg_attack=0.05 ampeg_decay=0.05 ampeg_sustain=0
+ampeg_delaycc1=0.25 ampeg_attackcc1=0.25 ampeg_decaycc1=0.25
+ampeg_attack_shape=0.0 ampeg_decay_shape=0.0
+group=2 off_by=2
+
+&lt;region&gt;locc100=43 hicc100=86
+sample=snare_stir_speed_1.wav
+ampeg_attack=0.05 ampeg_hold=0.05 ampeg_decay=0.1 ampeg_sustain=0
+ampeg_attackcc1=0.05 ampeg_holdcc1=0.35 ampeg_decaycc1=0.4
+ampeg_attack_shape=0.0 ampeg_decay_shape=-1.4
+group=1 off_by=1
+&lt;region&gt;locc100=43 hicc100=86
+sample=snare_stir_speed_3.wav
+ampeg_delay=0.05 ampeg_attack=0.05 ampeg_decay=0.05 ampeg_sustain=0
+ampeg_delaycc1=0.25 ampeg_attackcc1=0.25 ampeg_decaycc1=0.25
+ampeg_attack_shape=3.5 ampeg_decay_shape=-1.4
+group=2 off_by=2
+
+&lt;region&gt;locc100=87
+sample=snare_stir_speed_1.wav
+ampeg_attack=0.05 ampeg_hold=0.05 ampeg_decay=0.1 ampeg_sustain=0
+ampeg_attackcc1=0.05 ampeg_holdcc1=0.35 ampeg_decaycc1=0.4
+ampeg_attack_shape=0.0 ampeg_decay_shape=-3.5
+group=1 off_by=1
+&lt;region&gt;locc100=87
+sample=snare_stir_speed_3.wav
+ampeg_delay=0.05 ampeg_attack=0.05 ampeg_decay=0.05 ampeg_sustain=0
+ampeg_delaycc1=0.25 ampeg_attackcc1=0.25 ampeg_decaycc1=0.25
+ampeg_attack_shape=5.2 ampeg_decay_shape=-3.5
+group=2 off_by=2
+
+&lt;group&gt;key=27 sample=snare_stir_speed_2.wav
+ampeg_attack=0.05 ampeg_decay=0.05 ampeg_sustain=0
+ampeg_attackcc1=0.2 ampeg_decaycc1=0.2
+
+&lt;region&gt;hicc100=42
+ampeg_attack_shape=0.0 ampeg_decay_shape=0.0
+
+&lt;region&gt;hicc100=42
+ampeg_attack_shape=3.5 ampeg_decay_shape=-1.4
+
+&lt;region&gt;hicc100=42
+ampeg_attack_shape=5.2 ampeg_decay_shape=-3.5
+
+&lt;group&gt;key=28
+
+&lt;region&gt;hicc100=42
+sample=snare_stir_speed_2.wav
+ampeg_attack=0.05 ampeg_decay=0.1 ampeg_sustain=0
+ampeg_attackcc1=0.05 ampeg_decaycc1=0.4
+ampeg_attack_shape=0.0 ampeg_decay_shape=0.0
+group=1 off_by=1
+&lt;region&gt;hicc100=42
+sample=snare_stir_speed_4.wav
+ampeg_attack=0.05 ampeg_decay=0.05 ampeg_sustain=0
+ampeg_attackcc1=0.05 ampeg_decaycc1=0.2
+ampeg_attack_shape=0.0 ampeg_decay_shape=0.0
+group=2 off_by=2
+
+&lt;region&gt;locc100=43 hicc100=86
+sample=snare_stir_speed_2.wav
+ampeg_attack=0.05 ampeg_decay=0.1 ampeg_sustain=0
+ampeg_attackcc1=0.05 ampeg_decaycc1=0.4
+ampeg_attack_shape=3.5 ampeg_decay_shape=-1.4
+group=1 off_by=1
+&lt;region&gt;locc100=43 hicc100=86
+sample=snare_stir_speed_4.wav
+ampeg_attack=0.05 ampeg_decay=0.05 ampeg_sustain=0
+ampeg_attackcc1=0.05 ampeg_decaycc1=0.2
+ampeg_attack_shape=3.5 ampeg_decay_shape=-1.4
+group=2 off_by=2
+
+&lt;region&gt;locc100=87
+sample=snare_stir_speed_2.wav
+ampeg_attack=0.05 ampeg_decay=0.1 ampeg_sustain=0
+ampeg_attackcc1=0.05 ampeg_decaycc1=0.4
+ampeg_attack_shape=5.2 ampeg_decay_shape=-3.5
+group=1 off_by=1
+&lt;region&gt;locc100=87
+sample=snare_stir_speed_4.wav
+ampeg_attack=0.05 ampeg_decay=0.05 ampeg_sustain=0
+ampeg_attackcc1=0.05 ampeg_decaycc1=0.2
+ampeg_attack_shape=5.2 ampeg_decay_shape=-3.5
+group=2 off_by=2
+
+&lt;group&gt;key=29 sample=*silence
+
+&lt;region&gt;group=1 off_by=1
+&lt;region&gt;group=2 off_by=2
+</code></pre></div></div>
+
+<p>It is, of course, possible to apply <a href="/opcodes/seq_position">round robins</a> and <a href="/opcodes/lovel">dynamic layers</a> to this,
+just like any other drum sound. That is left as an exercise to the reader.</p>
+    
+      <h2 id="alternative-approach">
+        
+        
+          Alternative approach <a href="#alternative-approach" class="toc-anchor">#</a>
+        
+        
+      </h2>
+
+<p>The above approach was developed to be playable from an electronic drum kit
+controller. For keyboard controllers or sequencing, another approach is possible
+where instead of using a MIDI note to trigger a new stir every time the drummer
+would complete a circle, we hold down a long note for as long as we want to produce
+stirs (so, possibly for several measures, or even the entire duration of a song).
+We then <a href="/opcodes/xfin_loccN">use MIDI CC to crossfade between the layers</a> to
+modulate the speed of the stir in order to create realism and rhythmic interest.
+In order to be able to do this, the samples will have to be looped, but as stated
+at the beginning, looping or crossfading noisy samples is very easy as there are
+no phase issues. We also set the <a href="/opcodes/loop_mode">loop_mode</a> opcode to continuous
+instead of the one_shot setting used in the earlier approach.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;group&gt;key=26 loop_mode=continuous ampeg_release=0.25
+&lt;region&gt;sample=snare_stir_speed_1.wav xfin_locc1=0 xfin_hicc1=31 xfout_locc1=32 xfout_hicc1=63
+&lt;region&gt;sample=snare_stir_speed_2.wav xfin_locc1=32 xfin_hicc1=63 xfout_locc1=64 xfout_hicc1=95
+&lt;region&gt;sample=snare_stir_speed_3.wav xfin_locc1=64 xfin_hicc1=95 xfout_locc1=96 xfout_hicc1=127
+&lt;region&gt;sample=snare_stir_speed_4.wav xfin_locc1=96 xfin_hicc1=127
+</code></pre></div></div>
+
+<p>In practice, this approach has proven more difficult to use, with it being easy
+to sound obviously unrealistic by moving the MIDI CC parameter too quickly or
+staying at high values for too long. With care, however, it can produce realistic
+results, and it is extremely flexible.</p>
+    
+      <h2 id="further-possibilities">
+        
+        
+          Further possibilities <a href="#further-possibilities" class="toc-anchor">#</a>
+        
+        
+      </h2>
+
+<p>The brush flutter technique can be treated similarly to the base layer of the stirs.
+There is no need to layer faster and slower flutters. In theory, this approach
+could also be extended to other noisy, highly nonlinear sounds which can vary
+in duration - perhaps shakers. The main challenge there would be to record shakers
+shaking smoothly for an extended duration.</p>
+
+<p>It is also certainly possible to further improve the above model with more realism
+and playablity.</p>
+					</article>
+				</div>
+				<div class="col-md-3">
+					<aside>
+
+	
+						<div class="card border-dark mb-3">
+							<div class="card-header text-light"
+								style="background-color:#222">
+								<i class="fas fa-eye"
+									aria-hidden="true"></i>
+								Follow us
+							</div>
+							<div class="card-body" style="padding: 0.5rem">
+								<ul class="nav nav-pills flex-column">
+	<li class="nav-item">
+										<a class="nav-link" href="https://discord.gg/t7nrZ6d"
+											title="Discord Chat" style="padding: 0.35rem 0.25rem">
+										<i class="fab fa-discord fa-fw"
+										aria-hidden="true"></i>
+										Discord Chat</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://kiwiirc.com/nextclient/#irc://irc.freenode.net:+6697/#sfzformat"
+											title="Internet Relay Chat" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-hashtag fa-fw"
+										aria-hidden="true"></i>
+										IRC</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://github.com/sfzformat/"
+											title="GitHub Organization" style="padding: 0.35rem 0.25rem">
+										<i class="fab fa-github fa-fw"
+										aria-hidden="true"></i>
+										GitHub Organization</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="/atom.xml"
+											title="News Atom Feed" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-rss fa-fw"
+										aria-hidden="true"></i>
+										News Atom Feed</a>
+									</li>
+	
+								</ul>
+							</div>
+						</div>
+
+						<div class="card border-dark mb-3">
+							<div class="card-header text-light"
+								style="background-color:#222">
+								<i class="fas fa-link"
+									aria-hidden="true"></i>
+								Quick links
+							</div>
+							<div class="card-body" style="padding: 0.5rem">
+								<ul class="nav nav-pills flex-column">
+	<li class="nav-item">
+										<a class="nav-link" href="/legacy"
+											title="Old rgc:audio SFZ page" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-book fa-fw"
+										aria-hidden="true"></i>
+										Old rgc:audio SFZ page</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="http://www.drealm.info/sfz/"
+											title="Peter L. Jones' SFZ page" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-book fa-fw"
+										aria-hidden="true"></i>
+										Peter L. Jones' SFZ page</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://www.kvraudio.com/forum/viewtopic.php?f=42&t=508861"
+											title="KVR Forum SFZ post" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-users fa-fw"
+										aria-hidden="true"></i>
+										KVR Forum SFZ post</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://www.plogue.com/plgfrms/viewforum.php?f=14"
+											title="Plogue Forum" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-users fa-fw"
+										aria-hidden="true"></i>
+										Plogue Forum</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://sfzinstruments.github.io/"
+											title="Free SFZ Instruments" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-download fa-fw"
+										aria-hidden="true"></i>
+										Free SFZ Instruments</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://github.com/sfz/tests/"
+											title="rgc:audio SFZ test suite" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-download fa-fw"
+										aria-hidden="true"></i>
+										rgc:audio SFZ test suite</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://github.com/sfz/opcode-suggestions/"
+											title="Opcode suggestions" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-lightbulb fa-fw"
+										aria-hidden="true"></i>
+										Opcode suggestions</a>
+									</li>
+	
+								</ul>
+							</div>
+						</div>
+
+
+
+					</aside>
+				</div>
+			</div>
+			<hr>
+			<footer>
+				<p>
+					This site is open source.
+					<a href="https://github.com/sfzformat/sfzformat.github.io/edit/source/tutorials/brush_stirs.md">
+					Improve this page</a>
+				</p>
+			</footer>
+
+		</div>
+		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
+		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
+		<script>
+			$(document).ready(function(){
+			$('pre').addClass('prettyprint lang-sfz');
+			prettyPrint();
+			});
+		</script>
+		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+		<script>
+		$(document).on('click', '[data-toggle="lightbox"]', function(event) {
+			event.preventDefault();
+			$(this).ekkoLightbox({
+				alwaysShowClose: true
+			});
+		});
+		</script>
+
+
+	</body>
+</html>

@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<title>‹sample› - SFZ Format</title>
+
+		<meta name="author" content="Karoryfer Samples and SFZ Format Team">
+		<meta name="web-author" content="RedTide and SFZ Format Team">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Atom Feeds -->
+		<link href="/atom.xml" rel="alternate" type="application/atom+xml" />
+
+		<!-- Favicon Generator Icons -->
+		<link rel="apple-touch-icon" sizes="152x152" href="/assets/ico/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/assets/ico/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/assets/ico/favicon-16x16.png">
+		<link rel="manifest" href="/assets/ico/site.webmanifest">
+		<link rel="mask-icon" href="/assets/ico/safari-pinned-tab.svg" color="#5bbad5">
+		<link rel="shortcut icon" href="/assets/ico/favicon.ico">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-config" content="/assets/ico/browserconfig.xml">
+		<meta name="theme-color" content="#ffffff">
+
+		<!-- Stylesheets -->
+		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
+		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
+
+		<!-- Font Awesome Icons -->
+		<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/solid.js"       integrity="sha384-Mf3ap7OwO+bjTkzM1RsrothLh38uKXvMWJ2TQPXGHqZcqfeI/cyCV+sfV0IDnBDq" crossorigin="anonymous"></script>
+		<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/brands.js"      integrity="sha384-b2GpqFrJizV0BUEdbrITdOA5HnxnlrErt7MlEERWd6NSJ32rHeibEvyyCuA13OAS" crossorigin="anonymous"></script>
+		<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/fontawesome.js" integrity="sha384-EYYaHDhIRoBhd/Ir/1fPnxg9rZLk/55lKtlNT5KrIcONoCS2kjf7ZWzMoCLLACeo" crossorigin="anonymous"></script>
+
+	</head>
+
+	<body>
+
+		<button onclick="topFunction()" id="scrollButton" title="Go to top">Top</button>
+		<a href="#content" class="sr-only">Skip to content</a>
+		<div class="container">
+
+			<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#222">
+				<a class="navbar-brand" href="/">
+					<img src="/assets/img/logo.png"
+					width="120" height="30" class="d-inline-block align-top" alt=""></a>
+
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarContent" aria-controls="navbarContent"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarContent">
+					<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
+
+	
+		
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarSyntax"
+								data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Syntax</a>
+							<div class="dropdown-menu" aria-labelledby="navbarSyntax">
+		
+			
+								<a class="dropdown-item"
+									href="/headers/">Headers</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/opcodes/">Opcodes</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/modulations/">Modulations</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/modulations/envelope_generators">Envelope Generators</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/modulations/lfo">LFO</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/extensions/midi_ccs">Extended MIDI CCs</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/misc/categories">Types & Categories</a>
+			
+		
+							</div>
+	
+						</li>
+
+	
+		
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarSoftware"
+								data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Software</a>
+							<div class="dropdown-menu" aria-labelledby="navbarSoftware">
+		
+			
+								<a class="dropdown-item"
+									href="https://sfzinstruments.github.io">Instruments</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/software/players">Players</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/software/tools">Tools</a>
+			
+		
+							</div>
+	
+						</li>
+
+	
+		
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarTutorials"
+								data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Tutorials</a>
+							<div class="dropdown-menu" aria-labelledby="navbarTutorials">
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/basics">Basics</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/basic_sfz_file">Basic / Template</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/sustained_note_basics">Sustained Note Basics</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/vibrato">Vibrato</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/legato">Legato</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/unison">Unison</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/range_extension">Range extension</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/subtractive_synths">Subtractive Synthesizers</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/drum_basics">Drum Basics</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/brush_stirs">Brush Stirs</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/sfz1_modulations">SFZ 1 Modulations</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/sfz2_modulations">SFZ 2 Modulations</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/lfo">Pitch LFO Examples</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/videos">Video Tutorials</a>
+			
+		
+							</div>
+	
+						</li>
+
+	
+						<li class="nav-item">
+							<a class="nav-link"
+								href="/news"> News</a>
+	
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link"
+								href="/search/">
+								Search</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			<div class="row mt-4" id="content">
+				<div class="col-md-9">
+					<article><h1>‹sample›</h1><p>Allows to embed sample data directly in SFZ files (Rapture).</p>
+      <h2 id="example">
+        
+        
+          Example <a href="#example" class="toc-anchor">#</a>
+        
+        
+      </h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;region&gt; sample=mysample.wav
+&lt;sample&gt; name=mysample.wav data=[encoded-content-of-mysample.wav]
+</code></pre></div></div>
+
+<p>The content encoding is an alphabet mapping of 256 entries that map to each byte.
+(in the encoding, a WAV file is immediately recognizable by having its four byte
+“RIFF” header encoded to “|spp”)</p>
+
+<p><a href="/assets/src/makesample.c">This C source file</a> can be compiled to convert a wav file to an embedded sample.</p>
+    
+      <h2 id="decoding">
+        
+        
+          Decoding <a href="#decoding" class="toc-anchor">#</a>
+        
+        
+      </h2>
+
+<p>The decoding algorithm is as follows:</p>
+
+<ul>
+  <li>Loop while there is an input byte <code class="language-plaintext highlighter-rouge">b1</code>
+    <ul>
+      <li>if <code class="language-plaintext highlighter-rouge">b1</code> is the end marker $24, stop reading</li>
+      <li>if <code class="language-plaintext highlighter-rouge">b1</code> is ‘\r’ ($0D) or ‘\n’ ($0A), discard it</li>
+      <li>if <code class="language-plaintext highlighter-rouge">b1</code> is the escape character ‘=’ ($3D),
+        <ul>
+          <li>extract the next byte <code class="language-plaintext highlighter-rouge">b2</code>, and compute the next output byte as <code class="language-plaintext highlighter-rouge">(b2+$C0)%256</code></li>
+        </ul>
+      </li>
+      <li>otherwise, compute the next output byte as <code class="language-plaintext highlighter-rouge">(b2+$D6)%256</code></li>
+    </ul>
+  </li>
+</ul>
+    
+      <h2 id="encoding">
+        
+        
+          Encoding <a href="#encoding" class="toc-anchor">#</a>
+        
+        
+      </h2>
+
+<ul>
+  <li>Loop while there is an input byte <code class="language-plaintext highlighter-rouge">b1</code>
+    <ul>
+      <li>if <code class="language-plaintext highlighter-rouge">(b1+$2A)%256</code> is one of the “forbidden characters” ($3D, $00, $09, $0A, $0D, $24)
+        <ul>
+          <li>output the escape character $3D, and then output the byte <code class="language-plaintext highlighter-rouge">(b1+$40)%256</code></li>
+        </ul>
+      </li>
+      <li>otherwise, output <code class="language-plaintext highlighter-rouge">(b1+$2A)%256</code></li>
+    </ul>
+  </li>
+  <li>Output the end marker $24</li>
+</ul>
+    
+      <h2 id="alphabet">
+        
+        
+          Alphabet <a href="#alphabet" class="toc-anchor">#</a>
+        
+        
+      </h2>
+
+<p>The alphabet used for the coding is as following:</p>
+
+<table class="table table-sm table-bordered table-striped">
+  <thead>
+    <tr>
+      <th> </th>
+      <th>$00</th>
+      <th>$10</th>
+      <th>$20</th>
+      <th>$30</th>
+      <th>$40</th>
+      <th>$50</th>
+      <th>$60</th>
+      <th>$70</th>
+      <th>$80</th>
+      <th>$90</th>
+      <th>$A0</th>
+      <th>$B0</th>
+      <th>$C0</th>
+      <th>$D0</th>
+      <th>$E0</th>
+      <th>$F0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>$00</strong></td>
+      <td>$2A</td>
+      <td>$3A</td>
+      <td>$4A</td>
+      <td>$5A</td>
+      <td>$6A</td>
+      <td>$7A</td>
+      <td>$8A</td>
+      <td>$9A</td>
+      <td>$AA</td>
+      <td>$BA</td>
+      <td>$CA</td>
+      <td>$DA</td>
+      <td>$EA</td>
+      <td>$FA</td>
+      <td>$3D20</td>
+      <td>$1A</td>
+    </tr>
+    <tr>
+      <td><strong>$01</strong></td>
+      <td>$2B</td>
+      <td>$3B</td>
+      <td>$4B</td>
+      <td>$5B</td>
+      <td>$6B</td>
+      <td>$7B</td>
+      <td>$8B</td>
+      <td>$9B</td>
+      <td>$AB</td>
+      <td>$BB</td>
+      <td>$CB</td>
+      <td>$DB</td>
+      <td>$EB</td>
+      <td>$FB</td>
+      <td>$0B</td>
+      <td>$1B</td>
+    </tr>
+    <tr>
+      <td><strong>$02</strong></td>
+      <td>$2C</td>
+      <td>$3C</td>
+      <td>$4C</td>
+      <td>$5C</td>
+      <td>$6C</td>
+      <td>$7C</td>
+      <td>$8C</td>
+      <td>$9C</td>
+      <td>$AC</td>
+      <td>$BC</td>
+      <td>$CC</td>
+      <td>$DC</td>
+      <td>$EC</td>
+      <td>$FC</td>
+      <td>$0C</td>
+      <td>$1C</td>
+    </tr>
+    <tr>
+      <td><strong>$03</strong></td>
+      <td>$2D</td>
+      <td>$3D53</td>
+      <td>$4D</td>
+      <td>$5D</td>
+      <td>$6D</td>
+      <td>$7D</td>
+      <td>$8D</td>
+      <td>$9D</td>
+      <td>$AD</td>
+      <td>$BD</td>
+      <td>$CD</td>
+      <td>$DD</td>
+      <td>$ED</td>
+      <td>$FD</td>
+      <td>$3D23</td>
+      <td>$1D</td>
+    </tr>
+    <tr>
+      <td><strong>$04</strong></td>
+      <td>$2E</td>
+      <td>$3E</td>
+      <td>$4E</td>
+      <td>$5E</td>
+      <td>$6E</td>
+      <td>$7E</td>
+      <td>$8E</td>
+      <td>$9E</td>
+      <td>$AE</td>
+      <td>$BE</td>
+      <td>$CE</td>
+      <td>$DE</td>
+      <td>$EE</td>
+      <td>$FE</td>
+      <td>$0E</td>
+      <td>$1E</td>
+    </tr>
+    <tr>
+      <td><strong>$05</strong></td>
+      <td>$2F</td>
+      <td>$3F</td>
+      <td>$4F</td>
+      <td>$5F</td>
+      <td>$6F</td>
+      <td>$7F</td>
+      <td>$8F</td>
+      <td>$9F</td>
+      <td>$AF</td>
+      <td>$BF</td>
+      <td>$CF</td>
+      <td>$DF</td>
+      <td>$EF</td>
+      <td>$FF</td>
+      <td>$0F</td>
+      <td>$1F</td>
+    </tr>
+    <tr>
+      <td><strong>$06</strong></td>
+      <td>$30</td>
+      <td>$40</td>
+      <td>$50</td>
+      <td>$60</td>
+      <td>$70</td>
+      <td>$80</td>
+      <td>$90</td>
+      <td>$A0</td>
+      <td>$B0</td>
+      <td>$C0</td>
+      <td>$D0</td>
+      <td>$E0</td>
+      <td>$F0</td>
+      <td>$3D16</td>
+      <td>$10</td>
+      <td>$20</td>
+    </tr>
+    <tr>
+      <td><strong>$07</strong></td>
+      <td>$31</td>
+      <td>$41</td>
+      <td>$51</td>
+      <td>$61</td>
+      <td>$71</td>
+      <td>$81</td>
+      <td>$91</td>
+      <td>$A1</td>
+      <td>$B1</td>
+      <td>$C1</td>
+      <td>$D1</td>
+      <td>$E1</td>
+      <td>$F1</td>
+      <td>$01</td>
+      <td>$11</td>
+      <td>$21</td>
+    </tr>
+    <tr>
+      <td><strong>$08</strong></td>
+      <td>$32</td>
+      <td>$42</td>
+      <td>$52</td>
+      <td>$62</td>
+      <td>$72</td>
+      <td>$82</td>
+      <td>$92</td>
+      <td>$A2</td>
+      <td>$B2</td>
+      <td>$C2</td>
+      <td>$D2</td>
+      <td>$E2</td>
+      <td>$F2</td>
+      <td>$02</td>
+      <td>$12</td>
+      <td>$22</td>
+    </tr>
+    <tr>
+      <td><strong>$09</strong></td>
+      <td>$33</td>
+      <td>$43</td>
+      <td>$53</td>
+      <td>$63</td>
+      <td>$73</td>
+      <td>$83</td>
+      <td>$93</td>
+      <td>$A3</td>
+      <td>$B3</td>
+      <td>$C3</td>
+      <td>$D3</td>
+      <td>$E3</td>
+      <td>$F3</td>
+      <td>$03</td>
+      <td>$13</td>
+      <td>$23</td>
+    </tr>
+    <tr>
+      <td><strong>$0A</strong></td>
+      <td>$34</td>
+      <td>$44</td>
+      <td>$54</td>
+      <td>$64</td>
+      <td>$74</td>
+      <td>$84</td>
+      <td>$94</td>
+      <td>$A4</td>
+      <td>$B4</td>
+      <td>$C4</td>
+      <td>$D4</td>
+      <td>$E4</td>
+      <td>$F4</td>
+      <td>$04</td>
+      <td>$14</td>
+      <td>$3D3A</td>
+    </tr>
+    <tr>
+      <td><strong>$0B</strong></td>
+      <td>$35</td>
+      <td>$45</td>
+      <td>$55</td>
+      <td>$65</td>
+      <td>$75</td>
+      <td>$85</td>
+      <td>$95</td>
+      <td>$A5</td>
+      <td>$B5</td>
+      <td>$C5</td>
+      <td>$D5</td>
+      <td>$E5</td>
+      <td>$F5</td>
+      <td>$05</td>
+      <td>$15</td>
+      <td>$25</td>
+    </tr>
+    <tr>
+      <td><strong>$0C</strong></td>
+      <td>$36</td>
+      <td>$46</td>
+      <td>$56</td>
+      <td>$66</td>
+      <td>$76</td>
+      <td>$86</td>
+      <td>$96</td>
+      <td>$A6</td>
+      <td>$B6</td>
+      <td>$C6</td>
+      <td>$D6</td>
+      <td>$E6</td>
+      <td>$F6</td>
+      <td>$06</td>
+      <td>$16</td>
+      <td>$26</td>
+    </tr>
+    <tr>
+      <td><strong>$0D</strong></td>
+      <td>$37</td>
+      <td>$47</td>
+      <td>$57</td>
+      <td>$67</td>
+      <td>$77</td>
+      <td>$87</td>
+      <td>$97</td>
+      <td>$A7</td>
+      <td>$B7</td>
+      <td>$C7</td>
+      <td>$D7</td>
+      <td>$E7</td>
+      <td>$F7</td>
+      <td>$07</td>
+      <td>$17</td>
+      <td>$27</td>
+    </tr>
+    <tr>
+      <td><strong>$0E</strong></td>
+      <td>$38</td>
+      <td>$48</td>
+      <td>$58</td>
+      <td>$68</td>
+      <td>$78</td>
+      <td>$88</td>
+      <td>$98</td>
+      <td>$A8</td>
+      <td>$B8</td>
+      <td>$C8</td>
+      <td>$D8</td>
+      <td>$E8</td>
+      <td>$F8</td>
+      <td>$08</td>
+      <td>$18</td>
+      <td>$28</td>
+    </tr>
+    <tr>
+      <td><strong>$0F</strong></td>
+      <td>$39</td>
+      <td>$49</td>
+      <td>$59</td>
+      <td>$69</td>
+      <td>$79</td>
+      <td>$89</td>
+      <td>$99</td>
+      <td>$A9</td>
+      <td>$B9</td>
+      <td>$C9</td>
+      <td>$D9</td>
+      <td>$E9</td>
+      <td>$F9</td>
+      <td>$3D1F</td>
+      <td>$19</td>
+      <td>$29</td>
+    </tr>
+  </tbody>
+</table>
+					</article>
+				</div>
+				<div class="col-md-3">
+					<aside>
+
+	
+						<div class="card border-dark mb-3">
+							<div class="card-header text-light"
+								style="background-color:#222">
+								<i class="fas fa-eye"
+									aria-hidden="true"></i>
+								Follow us
+							</div>
+							<div class="card-body" style="padding: 0.5rem">
+								<ul class="nav nav-pills flex-column">
+	<li class="nav-item">
+										<a class="nav-link" href="https://discord.gg/t7nrZ6d"
+											title="Discord Chat" style="padding: 0.35rem 0.25rem">
+										<i class="fab fa-discord fa-fw"
+										aria-hidden="true"></i>
+										Discord Chat</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://kiwiirc.com/nextclient/#irc://irc.freenode.net:+6697/#sfzformat"
+											title="Internet Relay Chat" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-hashtag fa-fw"
+										aria-hidden="true"></i>
+										IRC</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://github.com/sfzformat/"
+											title="GitHub Organization" style="padding: 0.35rem 0.25rem">
+										<i class="fab fa-github fa-fw"
+										aria-hidden="true"></i>
+										GitHub Organization</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="/atom.xml"
+											title="News Atom Feed" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-rss fa-fw"
+										aria-hidden="true"></i>
+										News Atom Feed</a>
+									</li>
+	
+								</ul>
+							</div>
+						</div>
+
+						<div class="card border-dark mb-3">
+							<div class="card-header text-light"
+								style="background-color:#222">
+								<i class="fas fa-link"
+									aria-hidden="true"></i>
+								Quick links
+							</div>
+							<div class="card-body" style="padding: 0.5rem">
+								<ul class="nav nav-pills flex-column">
+	<li class="nav-item">
+										<a class="nav-link" href="/legacy"
+											title="Old rgc:audio SFZ page" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-book fa-fw"
+										aria-hidden="true"></i>
+										Old rgc:audio SFZ page</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="http://www.drealm.info/sfz/"
+											title="Peter L. Jones' SFZ page" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-book fa-fw"
+										aria-hidden="true"></i>
+										Peter L. Jones' SFZ page</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://www.kvraudio.com/forum/viewtopic.php?f=42&t=508861"
+											title="KVR Forum SFZ post" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-users fa-fw"
+										aria-hidden="true"></i>
+										KVR Forum SFZ post</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://www.plogue.com/plgfrms/viewforum.php?f=14"
+											title="Plogue Forum" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-users fa-fw"
+										aria-hidden="true"></i>
+										Plogue Forum</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://sfzinstruments.github.io/"
+											title="Free SFZ Instruments" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-download fa-fw"
+										aria-hidden="true"></i>
+										Free SFZ Instruments</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://github.com/sfz/tests/"
+											title="rgc:audio SFZ test suite" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-download fa-fw"
+										aria-hidden="true"></i>
+										rgc:audio SFZ test suite</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://github.com/sfz/opcode-suggestions/"
+											title="Opcode suggestions" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-lightbulb fa-fw"
+										aria-hidden="true"></i>
+										Opcode suggestions</a>
+									</li>
+	
+								</ul>
+							</div>
+						</div>
+
+
+
+					</aside>
+				</div>
+			</div>
+			<hr>
+			<footer>
+				<p>
+					This site is open source.
+					<a href="https://github.com/sfzformat/sfzformat.github.io/edit/source/headers/sample.md">
+					Improve this page</a>
+				</p>
+			</footer>
+
+		</div>
+		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
+		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
+		<script>
+			$(document).ready(function(){
+			$('pre').addClass('prettyprint lang-sfz');
+			prettyPrint();
+			});
+		</script>
+		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+		<script>
+		$(document).on('click', '[data-toggle="lightbox"]', function(event) {
+			event.preventDefault();
+			$(this).ekkoLightbox({
+				alwaysShowClose: true
+			});
+		});
+		</script>
+
+
+	</body>
+</html>

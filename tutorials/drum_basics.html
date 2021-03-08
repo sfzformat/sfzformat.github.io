@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<title>Drum basics - SFZ Format</title>
+
+		<meta name="author" content="Karoryfer Samples and SFZ Format Team">
+		<meta name="web-author" content="RedTide and SFZ Format Team">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Atom Feeds -->
+		<link href="/atom.xml" rel="alternate" type="application/atom+xml" />
+
+		<!-- Favicon Generator Icons -->
+		<link rel="apple-touch-icon" sizes="152x152" href="/assets/ico/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/assets/ico/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/assets/ico/favicon-16x16.png">
+		<link rel="manifest" href="/assets/ico/site.webmanifest">
+		<link rel="mask-icon" href="/assets/ico/safari-pinned-tab.svg" color="#5bbad5">
+		<link rel="shortcut icon" href="/assets/ico/favicon.ico">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-config" content="/assets/ico/browserconfig.xml">
+		<meta name="theme-color" content="#ffffff">
+
+		<!-- Stylesheets -->
+		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
+		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
+
+		<!-- Font Awesome Icons -->
+		<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/solid.js"       integrity="sha384-Mf3ap7OwO+bjTkzM1RsrothLh38uKXvMWJ2TQPXGHqZcqfeI/cyCV+sfV0IDnBDq" crossorigin="anonymous"></script>
+		<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/brands.js"      integrity="sha384-b2GpqFrJizV0BUEdbrITdOA5HnxnlrErt7MlEERWd6NSJ32rHeibEvyyCuA13OAS" crossorigin="anonymous"></script>
+		<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/fontawesome.js" integrity="sha384-EYYaHDhIRoBhd/Ir/1fPnxg9rZLk/55lKtlNT5KrIcONoCS2kjf7ZWzMoCLLACeo" crossorigin="anonymous"></script>
+
+	</head>
+
+	<body>
+
+		<button onclick="topFunction()" id="scrollButton" title="Go to top">Top</button>
+		<a href="#content" class="sr-only">Skip to content</a>
+		<div class="container">
+
+			<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#222">
+				<a class="navbar-brand" href="/">
+					<img src="/assets/img/logo.png"
+					width="120" height="30" class="d-inline-block align-top" alt=""></a>
+
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarContent" aria-controls="navbarContent"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarContent">
+					<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
+
+	
+		
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarSyntax"
+								data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Syntax</a>
+							<div class="dropdown-menu" aria-labelledby="navbarSyntax">
+		
+			
+								<a class="dropdown-item"
+									href="/headers/">Headers</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/opcodes/">Opcodes</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/modulations/">Modulations</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/modulations/envelope_generators">Envelope Generators</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/modulations/lfo">LFO</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/extensions/midi_ccs">Extended MIDI CCs</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/misc/categories">Types & Categories</a>
+			
+		
+							</div>
+	
+						</li>
+
+	
+		
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarSoftware"
+								data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Software</a>
+							<div class="dropdown-menu" aria-labelledby="navbarSoftware">
+		
+			
+								<a class="dropdown-item"
+									href="https://sfzinstruments.github.io">Instruments</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/software/players">Players</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/software/tools">Tools</a>
+			
+		
+							</div>
+	
+						</li>
+
+	
+		
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarTutorials"
+								data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Tutorials</a>
+							<div class="dropdown-menu" aria-labelledby="navbarTutorials">
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/basics">Basics</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/basic_sfz_file">Basic / Template</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/sustained_note_basics">Sustained Note Basics</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/vibrato">Vibrato</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/legato">Legato</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/unison">Unison</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/range_extension">Range extension</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/subtractive_synths">Subtractive Synthesizers</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/drum_basics">Drum Basics</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/brush_stirs">Brush Stirs</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/sfz1_modulations">SFZ 1 Modulations</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/sfz2_modulations">SFZ 2 Modulations</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/lfo">Pitch LFO Examples</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/videos">Video Tutorials</a>
+			
+		
+							</div>
+	
+						</li>
+
+	
+						<li class="nav-item">
+							<a class="nav-link"
+								href="/news"> News</a>
+	
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link"
+								href="/search/">
+								Search</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			<div class="row mt-4" id="content">
+				<div class="col-md-9">
+					<article><h1>Drum basics</h1><p>SFZ has a lot of opcodes. No instrument uses all of them, though, and even highly
+complicated instruments with thousands of samples will usually only use a dozen
+or two different opcodes.</p>
+
+<p>In this guide, we’ll talk about the opcodes needed to make a simple drum kit.
+If you have some drum samples, a text editor and an SFZ player, this should be
+all the knowledge you need to make a working SFZ mapping for those samples.
+Most of them will apply to most other instrument types as well. Later, we’ll
+apply this knowledge to instruments such as piano, guitar, violin and flute.</p>
+
+<p>A very simple instrument to make would be an electronic drum kit with one sample
+for each sound. A functional mapping for an entire sampled drum machine using
+one-shot samples could be made using only the region header, and two opcodes
+<a href="/opcodes/sample">sample</a> and <a href="/opcodes/key">key</a>. With kick, snare
+and hi-hat samples on their standard General MIDI notes, this could be the
+entire SFZ file:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;region&gt;key=36 sample=kick.wav
+&lt;region&gt;key=38 sample=snare.wav
+&lt;region&gt;key=42 sample=closedhat.wav
+</code></pre></div></div>
+
+<p>This would work. Load this into an SFZ player, hit the C on MIDI note 36, and
+you get the kick sample playing. However, each sound would play only while a
+note is held. With drums it’s usually a good idea to play the entire sample, so
+a very short note will result in a complete drum hit sounding. We can do that
+with the <a href="/opcodes/loop_mode">loop_mode</a> opcode, which is also used for
+looping (as the name implies), but <code class="language-plaintext highlighter-rouge">loop_mode=one_shot</code> causes the sampler to
+play the entire sample from start to end, ignoring note off.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;region&gt;key=36 loop_mode=one_shot sample=kick.wav
+&lt;region&gt;key=38 loop_mode=one_shot sample=snare.wav
+&lt;region&gt;key=42 loop_mode=one_shot sample=closedhat.wav
+</code></pre></div></div>
+
+<p>There’s no need to set the one_shot for each region, though. We can simplify
+our life by using the ‹<a href="/headers/global">global</a>› header like this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;global&gt;loop_mode=one_shot
+
+&lt;region&gt;key=36 sample=kick.wav
+&lt;region&gt;key=38 sample=snare.wav
+&lt;region&gt;key=42 sample=closedhat.wav
+</code></pre></div></div>
+
+<p>This is basically all that’s required to take, for example, some of
+Wave Alchemy’s very nice free samples of TR-808 or Tanzbar drum machines,
+and make a working SFZ mapping for them.</p>
+
+<p><em>Let’s say what we have isn’t drum machine samples, but acoustic drum samples.
+These sounds will have natural variation between hits - some depending on hit
+location, a lot depending on dynamics (how hard the drum is hit), and some just
+plain random. Let’s ignore controlling hit location for now (drum samples mostly
+do ignore it), and focus on the other two. Dynamic variation can be captured by
+recording hits of various intensity, and organizing them into dynamic layers,
+also called velocity layers.</em></p>
+
+<p>If we have an acoustic kick drum sampled at four dynamics - quiet, kind of quiet,
+kind of loud and loud - we have four dynamic layers. Let’s say the files for
+these layers are named like this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kick_vl1.wav
+kick_vl2.wav
+kick_vl3.wav
+kick_vl4.wav
+</code></pre></div></div>
+
+<p>To trigger the quiet sample at low MIDI note velocities, we’d use the
+<a href="/opcodes/lovel">lovel and hivel</a> opcodes like this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;region&gt;key=36 lovel=0 hivel=31 sample=kick_vl1.wav
+</code></pre></div></div>
+
+<p>All four hits with velocity ranges assigned, evenly splitting the full 0 to 127
+velocity range into four, would look like this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;region&gt;key=36
+lovel=0 hivel=31
+sample=kick_vl1.wav
+&lt;region&gt;key=36
+lovel=32 hivel=63
+sample=kick_vl2.wav
+&lt;region&gt;key=36
+lovel=64 hivel=95
+sample=kick_vl3.wav
+&lt;region&gt;key=36
+lovel=96 hivel=127
+sample=kick_vl4.wav
+</code></pre></div></div>
+<p>This can, again, be simplified. The defalut value for lovel is 0, and for hivel
+it’s 127, so we don’t need to specify setting them to those numbers. Also, we
+can use a ‹<a href="/headers/group">group</a>› header to make the key opcode the same
+across all four regions:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;global&gt;loop_mode=one_shot
+
+&lt;group&gt;key=36
+&lt;region&gt;hivel=31 sample=kick_vl1.wav
+&lt;region&gt;lovel=32 hivel=63 sample=kick_vl2.wav
+&lt;region&gt;lovel=64 hivel=95 sample=kick_vl3.wav
+&lt;region&gt;lovel=96 sample=kick_vl4.wav
+</code></pre></div></div>
+
+<p>However, the quiet samples will play quieter than they should - because of
+standard velocity tracking, each sample would play at full volume if the
+velocity was 127, but we actually need each sample to play at full volume at the
+velocity which is equal to its hivel value. This can be done in various ways,
+and the way we recommend is the <a href="/opcodes/amp_velcurve_N">amp_velcurve_N</a>
+opcode, like this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;global&gt;loop_mode=one_shot
+
+&lt;group&gt;key=36
+&lt;region&gt;hivel=31 amp_velcurve_31=1 sample=kick_vl1.wav
+&lt;region&gt;lovel=32 hivel=63 amp_velcurve_63=1 sample=kick_vl2.wav
+&lt;region&gt;lovel=64 hivel=95 amp_velcurve_95=1 sample=kick_vl3.wav
+&lt;region&gt;lovel=96 sample=kick_vl4.wav
+</code></pre></div></div>
+
+<p>Let’s say that each dynamic layer also contains four round robins - four samples
+with roughly the same dynamic. This allows us to include some variation, and
+sound more natural - fast parts won’t sound like a “machine gun”. There are two
+basic ways to put round robins to use. One is to use the <a href="/opcodes/seq_length">seq_length</a>
+and <a href="/opcodes/seq_position">seq_position</a> opcodes, like this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;global&gt;loop_mode=one_shot
+
+&lt;group&gt;key=36 hivel=31 amp_velcurve_31=1 seq_length=4
+&lt;region&gt;seq_position=1 sample=kick_vl1_rr1.wav
+&lt;region&gt;seq_position=2 sample=kick_vl1_rr2.wav
+&lt;region&gt;seq_position=3 sample=kick_vl1_rr3.wav
+&lt;region&gt;seq_position=4 sample=kick_vl1_rr4.wav
+&lt;group&gt;key=36 lovel=32 hivel=63 amp_velcurve_63=1 seq_length=4
+&lt;region&gt;seq_position=1 sample=kick_vl2_rr1.wav
+&lt;region&gt;seq_position=2 sample=kick_vl2_rr2.wav
+&lt;region&gt;seq_position=3 sample=kick_vl2_rr3.wav
+&lt;region&gt;seq_position=4 sample=kick_vl2_rr4.wav
+&lt;group&gt;key=36 lovel=64 hivel=95 amp_velcurve_95=1 seq_length=4
+&lt;region&gt;seq_position=1 sample=kick_vl3_rr1.wav
+&lt;region&gt;seq_position=2 sample=kick_vl3_rr2.wav
+&lt;region&gt;seq_position=3 sample=kick_vl3_rr3.wav
+&lt;region&gt;seq_position=4 sample=kick_vl3_rr4.wav
+&lt;group&gt;key=36 lovel=96 seq_length=4
+&lt;region&gt;seq_position=1 sample=kick_vl4_rr1.wav
+&lt;region&gt;seq_position=2 sample=kick_vl4_rr2.wav
+&lt;region&gt;seq_position=3 sample=kick_vl4_rr3.wav
+&lt;region&gt;seq_position=4 sample=kick_vl4_rr4.wav
+</code></pre></div></div>
+
+<p>That’s a kick drum with four dynamic layers and four sequential round robins.
+As you might have noticed, we’re repeating the key=36 and seq_length=4 opcodes
+in every group. Those two opcodes could be moved to the global level if all we
+wanted was a kick drum, but as we’re going to have other instruments with other
+keys and possibly different numbers of round robins, we kept them at the group
+level. The other way to use round robins is randomized, using the
+<a href="/opcodes/lorand">lorand and hirand</a> opcodes. This will make the sample
+player generate a random number, then play the region whose lorand to hirand
+range includes that random number. Whether robins should be used in this random
+way or the above sequential way, the answer is “it depends”. It seems that more
+instruments use sequential, though. This is how random round robins would be
+set up for our kick drum samples:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;global&gt;loop_mode=one_shot
+
+&lt;group&gt;key=36 hivel=31 amp_velcurve_31=1
+&lt;region&gt;hirand=0.25 sample=kick_vl1_rr1.wav
+&lt;region&gt;lorand=0.25 hirand=0.5 sample=kick_vl1_rr2.wav
+&lt;region&gt;lorand=0.5 hirand=0.75 sample=kick_vl1_rr3.wav
+&lt;region&gt;lorand=0.75 sample=kick_vl1_rr4.wav
+&lt;group&gt;key=36 lovel=32 hivel=63 amp_velcurve_63=1
+&lt;region&gt;hirand=0.25 sample=kick_vl2_rr1.wav
+&lt;region&gt;lorand=0.25 hirand=0.5 sample=kick_vl2_rr2.wav
+&lt;region&gt;lorand=0.5 hirand=0.75 sample=kick_vl2_rr3.wav
+&lt;region&gt;lorand=0.75 sample=kick_vl2_rr4.wav
+&lt;group&gt;key=36 lovel=64 hivel=95 amp_velcurve_95=1
+&lt;region&gt;hirand=0.25 sample=kick_vl3_rr1.wav
+&lt;region&gt;lorand=0.25 hirand=0.5 sample=kick_vl3_rr2.wav
+&lt;region&gt;lorand=0.5 hirand=0.75 sample=kick_vl3_rr3.wav
+&lt;region&gt;lorand=0.75 sample=kick_vl3_rr4.wav
+&lt;group&gt;key=36 lovel=96
+&lt;region&gt;hirand=0.25 sample=kick_vl4_rr1.wav
+&lt;region&gt;lorand=0.25 hirand=0.5 sample=kick_vl4_rr2.wav
+&lt;region&gt;lorand=0.5 hirand=0.75 sample=kick_vl4_rr3.wav
+&lt;region&gt;lorand=0.75 sample=kick_vl4_rr4.wav
+</code></pre></div></div>
+
+<p>If we go back to sequential round robins and add a snare with only
+three round robins, plus a few comments, the resulting SFZ would look like this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// This is an example of a basic drum kit mapping
+// All samples set to play in their entirety when a note is received
+
+&lt;global&gt;loop_mode=one_shot
+
+// This is the kick, on MIDI note 36, with four dynamic layers and four round robins
+
+&lt;group&gt;key=36 hivel=31 amp_velcurve_31=1 seq_length=4
+&lt;region&gt;seq_position=1 sample=kick_vl1_rr1.wav
+&lt;region&gt;seq_position=2 sample=kick_vl1_rr2.wav
+&lt;region&gt;seq_position=3 sample=kick_vl1_rr3.wav
+&lt;region&gt;seq_position=4 sample=kick_vl1_rr4.wav
+&lt;group&gt;key=36 lovel=32 hivel=63 amp_velcurve_63=1 seq_length=4
+&lt;region&gt;seq_position=1 sample=kick_vl2_rr1.wav
+&lt;region&gt;seq_position=2 sample=kick_vl2_rr2.wav
+&lt;region&gt;seq_position=3 sample=kick_vl2_rr3.wav
+&lt;region&gt;seq_position=4 sample=kick_vl2_rr4.wav
+&lt;group&gt;key=36 lovel=64 hivel=95 amp_velcurve_95=1 seq_length=4
+&lt;region&gt;seq_position=1 sample=kick_vl3_rr1.wav
+&lt;region&gt;seq_position=2 sample=kick_vl3_rr2.wav
+&lt;region&gt;seq_position=3 sample=kick_vl3_rr3.wav
+&lt;region&gt;seq_position=4 sample=kick_vl3_rr4.wav
+&lt;group&gt;key=36 lovel=96 seq_length=4
+&lt;region&gt;seq_position=1 sample=kick_vl4_rr1.wav
+&lt;region&gt;seq_position=2 sample=kick_vl4_rr2.wav
+&lt;region&gt;seq_position=3 sample=kick_vl4_rr3.wav
+&lt;region&gt;seq_position=4 sample=kick_vl4_rr4.wav
+
+// Here is the snare, on MIDI note 38, with four dynamic layers and three round robins
+
+&lt;group&gt;key=38 hivel=31 amp_velcurve_31=1 seq_length=3
+&lt;region&gt;seq_position=1 sample=snare_vl1_rr1.wav
+&lt;region&gt;seq_position=2 sample=snare_vl1_rr2.wav
+&lt;region&gt;seq_position=3 sample=snare_vl1_rr3.wav
+&lt;group&gt;key=38 lovel=32 hivel=63 amp_velcurve_63=1 seq_length=3
+&lt;region&gt;seq_position=1 sample=snare_vl2_rr1.wav
+&lt;region&gt;seq_position=2 sample=snare_vl2_rr2.wav
+&lt;region&gt;seq_position=3 sample=snare_vl2_rr3.wav
+&lt;group&gt;key=38 lovel=64 hivel=95 amp_velcurve_95=1 seq_length=3
+&lt;region&gt;seq_position=1 sample=snare_vl3_rr1.wav
+&lt;region&gt;seq_position=2 sample=snare_vl3_rr2.wav
+&lt;region&gt;seq_position=3 sample=snare_vl3_rr3.wav
+&lt;group&gt;key=38 lovel=96 seq_length=3
+&lt;region&gt;seq_position=1 sample=snare_vl4_rr1.wav
+&lt;region&gt;seq_position=2 sample=snare_vl4_rr2.wav
+&lt;region&gt;seq_position=3 sample=snare_vl4_rr3.wav
+</code></pre></div></div>
+
+<p>This is almost all the information needed to map basic drum kits in SFZ. Almost,
+because well-sampled hi-hats will have many different articulations, and that
+creates some additional considerations, which we will describe on <a href="/tutorials/cymbal_muting">another page</a>.</p>
+					</article>
+				</div>
+				<div class="col-md-3">
+					<aside>
+
+	
+						<div class="card border-dark mb-3">
+							<div class="card-header text-light"
+								style="background-color:#222">
+								<i class="fas fa-eye"
+									aria-hidden="true"></i>
+								Follow us
+							</div>
+							<div class="card-body" style="padding: 0.5rem">
+								<ul class="nav nav-pills flex-column">
+	<li class="nav-item">
+										<a class="nav-link" href="https://discord.gg/t7nrZ6d"
+											title="Discord Chat" style="padding: 0.35rem 0.25rem">
+										<i class="fab fa-discord fa-fw"
+										aria-hidden="true"></i>
+										Discord Chat</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://kiwiirc.com/nextclient/#irc://irc.freenode.net:+6697/#sfzformat"
+											title="Internet Relay Chat" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-hashtag fa-fw"
+										aria-hidden="true"></i>
+										IRC</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://github.com/sfzformat/"
+											title="GitHub Organization" style="padding: 0.35rem 0.25rem">
+										<i class="fab fa-github fa-fw"
+										aria-hidden="true"></i>
+										GitHub Organization</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="/atom.xml"
+											title="News Atom Feed" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-rss fa-fw"
+										aria-hidden="true"></i>
+										News Atom Feed</a>
+									</li>
+	
+								</ul>
+							</div>
+						</div>
+
+						<div class="card border-dark mb-3">
+							<div class="card-header text-light"
+								style="background-color:#222">
+								<i class="fas fa-link"
+									aria-hidden="true"></i>
+								Quick links
+							</div>
+							<div class="card-body" style="padding: 0.5rem">
+								<ul class="nav nav-pills flex-column">
+	<li class="nav-item">
+										<a class="nav-link" href="/legacy"
+											title="Old rgc:audio SFZ page" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-book fa-fw"
+										aria-hidden="true"></i>
+										Old rgc:audio SFZ page</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="http://www.drealm.info/sfz/"
+											title="Peter L. Jones' SFZ page" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-book fa-fw"
+										aria-hidden="true"></i>
+										Peter L. Jones' SFZ page</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://www.kvraudio.com/forum/viewtopic.php?f=42&t=508861"
+											title="KVR Forum SFZ post" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-users fa-fw"
+										aria-hidden="true"></i>
+										KVR Forum SFZ post</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://www.plogue.com/plgfrms/viewforum.php?f=14"
+											title="Plogue Forum" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-users fa-fw"
+										aria-hidden="true"></i>
+										Plogue Forum</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://sfzinstruments.github.io/"
+											title="Free SFZ Instruments" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-download fa-fw"
+										aria-hidden="true"></i>
+										Free SFZ Instruments</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://github.com/sfz/tests/"
+											title="rgc:audio SFZ test suite" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-download fa-fw"
+										aria-hidden="true"></i>
+										rgc:audio SFZ test suite</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://github.com/sfz/opcode-suggestions/"
+											title="Opcode suggestions" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-lightbulb fa-fw"
+										aria-hidden="true"></i>
+										Opcode suggestions</a>
+									</li>
+	
+								</ul>
+							</div>
+						</div>
+
+
+
+					</aside>
+				</div>
+			</div>
+			<hr>
+			<footer>
+				<p>
+					This site is open source.
+					<a href="https://github.com/sfzformat/sfzformat.github.io/edit/source/tutorials/drum_basics.md">
+					Improve this page</a>
+				</p>
+			</footer>
+
+		</div>
+		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
+		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
+		<script>
+			$(document).ready(function(){
+			$('pre').addClass('prettyprint lang-sfz');
+			prettyPrint();
+			});
+		</script>
+		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+		<script>
+		$(document).on('click', '[data-toggle="lightbox"]', function(event) {
+			event.preventDefault();
+			$(this).ekkoLightbox({
+				alwaysShowClose: true
+			});
+		});
+		</script>
+
+
+	</body>
+</html>

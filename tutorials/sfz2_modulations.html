@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<title>SFZ2 modulations - SFZ Format</title>
+
+		<meta name="author" content="Karoryfer Samples and SFZ Format Team">
+		<meta name="web-author" content="RedTide and SFZ Format Team">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Atom Feeds -->
+		<link href="/atom.xml" rel="alternate" type="application/atom+xml" />
+
+		<!-- Favicon Generator Icons -->
+		<link rel="apple-touch-icon" sizes="152x152" href="/assets/ico/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/assets/ico/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/assets/ico/favicon-16x16.png">
+		<link rel="manifest" href="/assets/ico/site.webmanifest">
+		<link rel="mask-icon" href="/assets/ico/safari-pinned-tab.svg" color="#5bbad5">
+		<link rel="shortcut icon" href="/assets/ico/favicon.ico">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-config" content="/assets/ico/browserconfig.xml">
+		<meta name="theme-color" content="#ffffff">
+
+		<!-- Stylesheets -->
+		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
+		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
+
+		<!-- Font Awesome Icons -->
+		<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/solid.js"       integrity="sha384-Mf3ap7OwO+bjTkzM1RsrothLh38uKXvMWJ2TQPXGHqZcqfeI/cyCV+sfV0IDnBDq" crossorigin="anonymous"></script>
+		<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/brands.js"      integrity="sha384-b2GpqFrJizV0BUEdbrITdOA5HnxnlrErt7MlEERWd6NSJ32rHeibEvyyCuA13OAS" crossorigin="anonymous"></script>
+		<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/fontawesome.js" integrity="sha384-EYYaHDhIRoBhd/Ir/1fPnxg9rZLk/55lKtlNT5KrIcONoCS2kjf7ZWzMoCLLACeo" crossorigin="anonymous"></script>
+
+	</head>
+
+	<body>
+
+		<button onclick="topFunction()" id="scrollButton" title="Go to top">Top</button>
+		<a href="#content" class="sr-only">Skip to content</a>
+		<div class="container">
+
+			<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#222">
+				<a class="navbar-brand" href="/">
+					<img src="/assets/img/logo.png"
+					width="120" height="30" class="d-inline-block align-top" alt=""></a>
+
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarContent" aria-controls="navbarContent"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarContent">
+					<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
+
+	
+		
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarSyntax"
+								data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Syntax</a>
+							<div class="dropdown-menu" aria-labelledby="navbarSyntax">
+		
+			
+								<a class="dropdown-item"
+									href="/headers/">Headers</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/opcodes/">Opcodes</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/modulations/">Modulations</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/modulations/envelope_generators">Envelope Generators</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/modulations/lfo">LFO</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/extensions/midi_ccs">Extended MIDI CCs</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/misc/categories">Types & Categories</a>
+			
+		
+							</div>
+	
+						</li>
+
+	
+		
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarSoftware"
+								data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Software</a>
+							<div class="dropdown-menu" aria-labelledby="navbarSoftware">
+		
+			
+								<a class="dropdown-item"
+									href="https://sfzinstruments.github.io">Instruments</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/software/players">Players</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/software/tools">Tools</a>
+			
+		
+							</div>
+	
+						</li>
+
+	
+		
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarTutorials"
+								data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Tutorials</a>
+							<div class="dropdown-menu" aria-labelledby="navbarTutorials">
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/basics">Basics</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/basic_sfz_file">Basic / Template</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/sustained_note_basics">Sustained Note Basics</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/vibrato">Vibrato</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/legato">Legato</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/unison">Unison</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/range_extension">Range extension</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/subtractive_synths">Subtractive Synthesizers</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/drum_basics">Drum Basics</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/brush_stirs">Brush Stirs</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/sfz1_modulations">SFZ 1 Modulations</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/sfz2_modulations">SFZ 2 Modulations</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/lfo">Pitch LFO Examples</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/videos">Video Tutorials</a>
+			
+		
+							</div>
+	
+						</li>
+
+	
+						<li class="nav-item">
+							<a class="nav-link"
+								href="/news"> News</a>
+	
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link"
+								href="/search/">
+								Search</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			<div class="row mt-4" id="content">
+				<div class="col-md-9">
+					<article><h1>SFZ2 modulations</h1><p>The <a href="/modulations/index">modulations</a> available under SFZ2 are much more flexible than the fixed set
+<a href="/tutorials/sfz1_modulations">specified by SFZ1</a>. All SFZ1 modulations are still
+available under the SFZ2 spec, and will often be easier to use in cases such as
+envelopes where the standard AHDSR shape is all that’s needed.</p>
+
+<p>The basic difference is that SFZ1 has three envelopes - one assigned to
+volume, one to pitch, and one to filter cutoff. There are also three LFOs,
+one for each of those modulation targets. SFZ2 can have an arbitraty number
+of envelopes and LFOs, with the ability to specify one or more modulation
+targets from a list. It is even possible for LFOs to modulate other LFOs
+and envelopes to modulate LFOs (but not for LFOs to modulate envelopes).
+In addition, SFZ2 envelopes can have an arbitrary number of points.</p>
+      <h2 id="additional-midi-cc-modulation">
+        
+        
+          Additional MIDI CC modulation <a href="#additional-midi-cc-modulation" class="toc-anchor">#</a>
+        
+        
+      </h2>
+
+<p>SFZ2 adds one more paramter which can be modulated with MIDI CC - <a href="/opcodes/width_onccN">stereo width</a>.
+Also need to document pan_onccX and find out whether it’s SFZ1 or SFZ2 - currently
+not sure, needs testing.</p>
+    
+      <h2 id="lfos">
+        
+        
+          LFOs <a href="#lfos" class="toc-anchor">#</a>
+        
+        
+      </h2>
+
+<p>For each LFO, an LFO number must be specified - lfo01, lfo02 etc. Each
+LFO has the following parameters:</p>
+
+<ul>
+  <li><a href="/opcodes/lfoN_wave">lfoN_wave</a></li>
+  <li><a href="/opcodes/lfoN_freq">lfoN_freq</a></li>
+  <li><a href="/opcodes/lfoN_freq">lfoN_freq_onccX</a></li>
+  <li><a href="/opcodes/lfoN_freq_smoothccX">lfoN_freq_smoothccX</a></li>
+  <li><a href="/opcodes/lfoN_freq_stepccX">lfoN_freq_stepccX</a></li>
+  <li><a href="/opcodes/lfoN_delay">lfoN_delay</a></li>
+  <li><a href="/opcodes/lfoN_delay">lfoN_delay_onccX</a></li>
+  <li><a href="/opcodes/lfoN_fade">lfoN_fade</a></li>
+  <li><a href="/opcodes/lfoN_fade">lfoN_fade_onccX</a></li>
+  <li><a href="/opcodes/lfoN_phase">lfoN_phase</a></li>
+  <li><a href="/opcodes/lfoN_phase">lfoN_phase_onccX</a></li>
+  <li><a href="/opcodes/lfoN_count">lfoN_count</a></li>
+</ul>
+
+<p>Click on each link for a detailed description. Similarly to SFZ1 LFOs,
+there’s a frequency, a delay and a fade-in time. In addition, the
+waveform shape and initial phase can be specified and the LFO can
+be configured to run for a limited number of counts.</p>
+
+<p>The frequency, delay, fade and initial phase can all be modulated by
+MIDI CC. There is no modulation for LFO depth - to control the depth
+of vibrato etc, use MIDI CC to modulate how much the LFO affects the
+desired target.</p>
+    
+      <h2 id="available-lfo-targets">
+        
+        
+          Available LFO targets <a href="#available-lfo-targets" class="toc-anchor">#</a>
+        
+        
+      </h2>
+
+<p>The available modulation targets for LFOs are These destinations are
+added as a suffix to ‘lfoN_’. For example</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lfo01_pitch=100
+</code></pre></div></div>
+
+<p>makes LFO 01 affect pitch with a max depth of 100 cents.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lfo03_freq_lfo01_oncc117=1.3
+</code></pre></div></div>
+
+<p>would make LFO 03 add up to 1.3 Hertz to
+the frequency of LFO 01, with the amount modulated by MIDI CC 117.</p>
+
+<p>The avaialble targets related to volume and stereo positioning are:</p>
+
+<ul>
+  <li>volume</li>
+  <li>volume_oncc</li>
+  <li>volume_smoothcc</li>
+  <li>volume_stepcc</li>
+  <li>amplitude</li>
+  <li>amplitude_oncc</li>
+  <li>amplitude_smoothcc</li>
+  <li>amplitude_stepcc</li>
+  <li>pan</li>
+  <li>pan_oncc</li>
+  <li>pan_smoothcc</li>
+  <li>pan_stepcc</li>
+  <li>width</li>
+  <li>width_oncc</li>
+  <li>width_smoothcc</li>
+  <li>width_stepcc</li>
+</ul>
+
+<p>The targets for pitch modulation are:</p>
+
+<ul>
+  <li>pitch</li>
+  <li>pitch_oncc</li>
+  <li>pitch_smoothcc</li>
+  <li>pitch_stepcc</li>
+</ul>
+
+<p>The targets for filter modulation are cutoff and resonance, for both
+the first and second filter:</p>
+
+<ul>
+  <li>cutoff</li>
+  <li>cutoff_oncc</li>
+  <li>cutoff_smoothcc</li>
+  <li>cutoff_stepcc</li>
+  <li>resonance</li>
+  <li>resonance_oncc</li>
+  <li>resonance_smoothcc</li>
+  <li>resonance_stepcc</li>
+  <li>cutoff2</li>
+  <li>cutoff2_oncc</li>
+  <li>cutoff2_smoothcc</li>
+  <li>cutoff2_stepcc</li>
+  <li>resonance2</li>
+  <li>resonance2_oncc</li>
+  <li>resonance2_smoothcc</li>
+  <li>resonance2_stepcc</li>
+</ul>
+
+<p>The modulations of the EQ bands are:</p>
+
+<ul>
+  <li>eqNfreq</li>
+  <li>eqNfreq_oncc</li>
+  <li>eqNfreq_smoothcc</li>
+  <li>eqNfreq_stepcc</li>
+  <li>eqNbw</li>
+  <li>eqNbw_oncc</li>
+  <li>eq1bw_smoothcc</li>
+  <li>eqNbw_stepcc</li>
+  <li>eqNgain</li>
+  <li>eqNgain_oncc</li>
+  <li>eqNgain_smoothcc</li>
+  <li>eqNgain_stepcc</li>
+</ul>
+
+<p>The following targets affect other LFOs:</p>
+
+<ul>
+  <li>freq_lfoX</li>
+  <li>depth_lfoX</li>
+  <li>depthadd_lfoX</li>
+</ul>
+
+<p>Some Cakewalk instruments can also modulate the decim and bitred effects:</p>
+
+<ul>
+  <li>decim</li>
+  <li>decim_oncc</li>
+  <li>decim_smoothcc</li>
+  <li>decim_stepcc</li>
+  <li>bitred</li>
+  <li>bitred_oncc</li>
+  <li>bitred_smoothcc</li>
+  <li>bitred_stepcc</li>
+</ul>
+    
+      <h2 id="lfo-examples">
+        
+        
+          LFO examples <a href="#lfo-examples" class="toc-anchor">#</a>
+        
+        
+      </h2>
+
+<p>Here is an example of how one LFO could be used to control both pitch vibrato
+and volume vibrato (tremolo) with the rate, pitch vibrato depth, tremolo
+depth, delay and fade each controlled by a separate MIDI CC parameter:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lfo01_pitch_oncc111=22 // Vibrato LFO
+lfo01_freq=2
+lfo01_freq_oncc113=7
+lfo01_delay_oncc114=0.500
+lfo01_fade_oncc115=0.500
+lfo01_volume=0 // This LFO also does tremolo
+lfo01_volume_oncc112=2
+</code></pre></div></div>
+
+<p>And an LFO which does just pitch vibrato, and has a second LFO modulating its
+rate to create some unsteadiness:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lfo01_pitch_oncc111=22 // Vibrato LFO
+lfo01_freq=2
+lfo01_freq_oncc113=7
+lfo01_delay_oncc114=0.500
+lfo01_fade_oncc115=0.500
+
+lfo2_freq_lfo1_oncc116=3   //Affect the rate of the other LFO for unsteady vibrato
+lfo02_wave=1
+lfo02_freq=0.1
+lfo02_freq_oncc116=0.9
+</code></pre></div></div>
+
+<p>For randomized humanization, the extended MIDI CC 135 can be used to randomize the
+initial phase and speed of the second LFO.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lfo01_pitch_oncc111=22 // Vibrato LFO
+lfo01_freq=2
+lfo01_freq_oncc113=7
+lfo01_delay_oncc114=0.500
+lfo01_fade_oncc115=0.500
+
+lfo2_freq_lfo1_oncc116=3   //Affect the rate of the other LFO for unsteady vibrato
+lfo02_wave=1
+lfo02_freq=0.1
+lfo02_freq_oncc116=0.8
+lfo02_phase_oncc135=1
+lfo02_freq_oncc135=0.2
+</code></pre></div></div>
+    
+      <h2 id="envelopes">
+        
+        
+          Envelopes <a href="#envelopes" class="toc-anchor">#</a>
+        
+        
+      </h2>
+
+<p>SFZ2 envelopes are numbered and can have an arbitrary number of points, with
+the level at each point and its modulation set separately. The opcodes used
+to create these envelopes are:</p>
+
+<ul>
+  <li><a href="/opcodes/egN_points">egN_points</a></li>
+  <li><a href="/opcodes/egN_levelX">egN_levelX</a></li>
+  <li><a href="/opcodes/egN_levelX">egN_levelX_onccY</a></li>
+  <li><a href="/opcodes/egN_timeX">egN_timeX</a></li>
+  <li><a href="/opcodes/egN_timeX">egN_timeX_onccY</a></li>
+  <li><a href="/opcodes/egN_shapeX">egN_shapeX</a></li>
+  <li><a href="/opcodes/egN_curveX">egN_curveX</a></li>
+  <li><a href="/opcodes/egN_sustain">egN_sustain</a></li>
+  <li><a href="/opcodes/egN_loop">egN_loop</a></li>
+</ul>
+    
+      <h2 id="envelope-targets">
+        
+        
+          Envelope targets <a href="#envelope-targets" class="toc-anchor">#</a>
+        
+        
+      </h2>
+
+<p>Similarly to LFOs, envelopes have assignable modulation targets. These
+destinations are added as a suffix to ‘egN_’  - so, for example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>eg01_pitch=2400
+</code></pre></div></div>
+
+<p>would have envelope 01 modulate pitch, with an envelope depth of 2400 cents.</p>
+
+<p>These are the available targets related to amplitude and stereo positioning:</p>
+
+<ul>
+  <li>amplitude</li>
+  <li>amplitude_oncc</li>
+  <li>volume</li>
+  <li>volume_oncc</li>
+  <li>pan</li>
+  <li>pan_oncc</li>
+  <li>width</li>
+  <li>width_oncc</li>
+</ul>
+
+<p>Targets for pitch:</p>
+
+<ul>
+  <li>pitch</li>
+  <li>pitch_oncc</li>
+</ul>
+
+<p>Targets for filters:</p>
+
+<ul>
+  <li>cutoff</li>
+  <li>cutoff_oncc</li>
+  <li>resonance</li>
+  <li>resonance_oncc</li>
+  <li>cutoff2</li>
+  <li>cutoff2_oncc</li>
+  <li>resonance2</li>
+  <li>resonance2_oncc</li>
+</ul>
+
+<p>Targets for EQ bands:</p>
+
+<ul>
+  <li>eqNbw</li>
+  <li>eqNbw_oncc</li>
+  <li>eqNfreq</li>
+  <li>eqNfreq_oncc</li>
+  <li>eqNgain</li>
+  <li>eqNgain_oncc</li>
+</ul>
+
+<p>Targets for modulating LFOs:</p>
+
+<ul>
+  <li>depth_lfo</li>
+  <li>depthadd_lfo</li>
+  <li>freq_lfo</li>
+</ul>
+
+<p>These two need to be tested - are they for envelopes to modulate other envelopes?</p>
+
+<ul>
+  <li>depth</li>
+  <li>depth_oncc</li>
+</ul>
+
+<p>Targets for modulating decim and bitred do not appear to have been included in the specification.</p>
+    
+      <h2 id="example-envelope">
+        
+        
+          Example envelope <a href="#example-envelope" class="toc-anchor">#</a>
+        
+        
+      </h2>
+
+<p>Here is a simple pitch envelope which will start a note with a glide from up to an octave
+lower, with the depth and time modulated by MIDI CCs. The envelope will statt at a lower
+value at envelope point 0, and return the pitch to normal at envelope point 1.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>eg01_sustain=1 //Pitch envelope setup for slides
+eg01_level0=1
+eg01_level1=0
+eg01_time0=0
+eg01_time1=0
+eg01_pitch_oncc100=-1200
+eg01_time1_oncc101=1
+</code></pre></div></div>
+    
+      <h2 id="using-lfos-and-evelopes-togehter">
+        
+        
+          Using LFOs and evelopes togehter <a href="#using-lfos-and-evelopes-togehter" class="toc-anchor">#</a>
+        
+        
+      </h2>
+
+<p>Here is an example of using both an envelope and an LFO to modulate pitch, with common
+depth and delay parameters. The goal here is asymmetrical pitch vibrato - vibrato which
+does not go up and down around the original pitch, but instead only goes below it. This
+is idiomatic with saxophones, and is also how vibrato with certain types of non-floating
+guitar bridges works (string-bending vibrato is similar, of course, but in the other
+direction).</p>
+
+<p>Shifting the phase of LFO01 will make the vibrato waveform start at the top. We also need
+to lower the pitch by the same amount as the vibrato depth. Using an envelope for this
+allows us to delay the onset of the vibrato (again, an important element of idiomatic
+saxophone vibrato) without a discontinuous jump in pitch.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lfo01_pitch_oncc111=20 //Saxy vibrato LFO - goes down from the main pitch
+lfo01_freq=2
+lfo01_freq_oncc112=8
+lfo01_phase=0.25 //To make it start at the top
+lfo01_delay_oncc116=1
+eg01_pitch_oncc111=20
+eg01_sustain=1
+eg01_level0=0
+eg01_level1=0
+eg01_level2=-1
+eg01_time0=0
+eg01_time1=0
+eg01_time1_oncc116=1
+eg01_time2=0
+</code></pre></div></div>
+    
+      <h2 id="using-sfz1-and-sfz2-modulations-together">
+        
+        
+          Using SFZ1 and SFZ2 modulations together <a href="#using-sfz1-and-sfz2-modulations-together" class="toc-anchor">#</a>
+        
+        
+      </h2>
+
+<p>Both SFZ1 and SFZ2 modulations may be mixed freely. Indeed, it may be simpler to accomplish
+the above using the SFZ1 pitch envelope, as it is sufficient in this case, with the SFZ2
+LFO. Setting the initial phase and modulating the delay with MIDI CC would not be possible
+with the SFZ1 pitch LFO.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lfo01_pitch_oncc111=20 //Saxy vibrato LFO - goes down from the main pitch
+lfo01_freq=2
+lfo01_freq_oncc112=8
+lfo01_phase=0.25 //To make it start at the top
+lfo01_delay_oncc116=1
+pitcheg_delay_oncc116=1 //Pitch envelope to drop the central pitch when sax vibrato kicks in
+pitcheg_depth_oncc111=-20
+</code></pre></div></div>
+    
+      <h2 id="smoothccn-and-stepccn">
+        
+        
+          SmoothccN and stepccN <a href="#smoothccn-and-stepccn" class="toc-anchor">#</a>
+        
+        
+      </h2>
+
+<p>Most MIDI CC modulations, though not all, can have use <a href="/modulations/smoothccN">smoothccN</a> and <a href="/modulations/stepccN">stepccN</a>.
+These work similarly to <a href="/opcodes/bend_smooth">bend_smooth</a> and <a href="/opcodes/bend_step">bend_step</a>.</p>
+
+<p>SmoothccN adds “inertia” to a modulation, so quickly changing the MIDI CC value has a slower effect
+on the modulation target than it would normally. StepccN causes the modulation to happen in a
+discrete number of steps. Setting the number of steps to 1 would make the modulation an
+all-or-nothing control.</p>
+
+<p>This is what’s possible under the SFZ2 specification. There are some additional modulations
+available as <a href="/opcodes/?v=aria">ARIA extensions</a>, with <a href="/opcodes/amplitude">amplitude_onccN</a>
+being a very useful one.</p>
+					</article>
+				</div>
+				<div class="col-md-3">
+					<aside>
+
+	
+						<div class="card border-dark mb-3">
+							<div class="card-header text-light"
+								style="background-color:#222">
+								<i class="fas fa-eye"
+									aria-hidden="true"></i>
+								Follow us
+							</div>
+							<div class="card-body" style="padding: 0.5rem">
+								<ul class="nav nav-pills flex-column">
+	<li class="nav-item">
+										<a class="nav-link" href="https://discord.gg/t7nrZ6d"
+											title="Discord Chat" style="padding: 0.35rem 0.25rem">
+										<i class="fab fa-discord fa-fw"
+										aria-hidden="true"></i>
+										Discord Chat</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://kiwiirc.com/nextclient/#irc://irc.freenode.net:+6697/#sfzformat"
+											title="Internet Relay Chat" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-hashtag fa-fw"
+										aria-hidden="true"></i>
+										IRC</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://github.com/sfzformat/"
+											title="GitHub Organization" style="padding: 0.35rem 0.25rem">
+										<i class="fab fa-github fa-fw"
+										aria-hidden="true"></i>
+										GitHub Organization</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="/atom.xml"
+											title="News Atom Feed" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-rss fa-fw"
+										aria-hidden="true"></i>
+										News Atom Feed</a>
+									</li>
+	
+								</ul>
+							</div>
+						</div>
+
+						<div class="card border-dark mb-3">
+							<div class="card-header text-light"
+								style="background-color:#222">
+								<i class="fas fa-link"
+									aria-hidden="true"></i>
+								Quick links
+							</div>
+							<div class="card-body" style="padding: 0.5rem">
+								<ul class="nav nav-pills flex-column">
+	<li class="nav-item">
+										<a class="nav-link" href="/legacy"
+											title="Old rgc:audio SFZ page" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-book fa-fw"
+										aria-hidden="true"></i>
+										Old rgc:audio SFZ page</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="http://www.drealm.info/sfz/"
+											title="Peter L. Jones' SFZ page" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-book fa-fw"
+										aria-hidden="true"></i>
+										Peter L. Jones' SFZ page</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://www.kvraudio.com/forum/viewtopic.php?f=42&t=508861"
+											title="KVR Forum SFZ post" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-users fa-fw"
+										aria-hidden="true"></i>
+										KVR Forum SFZ post</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://www.plogue.com/plgfrms/viewforum.php?f=14"
+											title="Plogue Forum" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-users fa-fw"
+										aria-hidden="true"></i>
+										Plogue Forum</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://sfzinstruments.github.io/"
+											title="Free SFZ Instruments" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-download fa-fw"
+										aria-hidden="true"></i>
+										Free SFZ Instruments</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://github.com/sfz/tests/"
+											title="rgc:audio SFZ test suite" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-download fa-fw"
+										aria-hidden="true"></i>
+										rgc:audio SFZ test suite</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://github.com/sfz/opcode-suggestions/"
+											title="Opcode suggestions" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-lightbulb fa-fw"
+										aria-hidden="true"></i>
+										Opcode suggestions</a>
+									</li>
+	
+								</ul>
+							</div>
+						</div>
+
+
+
+					</aside>
+				</div>
+			</div>
+			<hr>
+			<footer>
+				<p>
+					This site is open source.
+					<a href="https://github.com/sfzformat/sfzformat.github.io/edit/source/tutorials/sfz2_modulations.md">
+					Improve this page</a>
+				</p>
+			</footer>
+
+		</div>
+		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
+		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
+		<script>
+			$(document).ready(function(){
+			$('pre').addClass('prettyprint lang-sfz');
+			prettyPrint();
+			});
+		</script>
+		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+		<script>
+		$(document).on('click', '[data-toggle="lightbox"]', function(event) {
+			event.preventDefault();
+			$(this).ekkoLightbox({
+				alwaysShowClose: true
+			});
+		});
+		</script>
+
+
+	</body>
+</html>

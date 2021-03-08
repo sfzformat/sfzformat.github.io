@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<title>Subtractive synthesizers - SFZ Format</title>
+
+		<meta name="author" content="Karoryfer Samples and SFZ Format Team">
+		<meta name="web-author" content="RedTide and SFZ Format Team">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Atom Feeds -->
+		<link href="/atom.xml" rel="alternate" type="application/atom+xml" />
+
+		<!-- Favicon Generator Icons -->
+		<link rel="apple-touch-icon" sizes="152x152" href="/assets/ico/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/assets/ico/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/assets/ico/favicon-16x16.png">
+		<link rel="manifest" href="/assets/ico/site.webmanifest">
+		<link rel="mask-icon" href="/assets/ico/safari-pinned-tab.svg" color="#5bbad5">
+		<link rel="shortcut icon" href="/assets/ico/favicon.ico">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-config" content="/assets/ico/browserconfig.xml">
+		<meta name="theme-color" content="#ffffff">
+
+		<!-- Stylesheets -->
+		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
+		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
+
+		<!-- Font Awesome Icons -->
+		<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/solid.js"       integrity="sha384-Mf3ap7OwO+bjTkzM1RsrothLh38uKXvMWJ2TQPXGHqZcqfeI/cyCV+sfV0IDnBDq" crossorigin="anonymous"></script>
+		<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/brands.js"      integrity="sha384-b2GpqFrJizV0BUEdbrITdOA5HnxnlrErt7MlEERWd6NSJ32rHeibEvyyCuA13OAS" crossorigin="anonymous"></script>
+		<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/fontawesome.js" integrity="sha384-EYYaHDhIRoBhd/Ir/1fPnxg9rZLk/55lKtlNT5KrIcONoCS2kjf7ZWzMoCLLACeo" crossorigin="anonymous"></script>
+
+	</head>
+
+	<body>
+
+		<button onclick="topFunction()" id="scrollButton" title="Go to top">Top</button>
+		<a href="#content" class="sr-only">Skip to content</a>
+		<div class="container">
+
+			<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#222">
+				<a class="navbar-brand" href="/">
+					<img src="/assets/img/logo.png"
+					width="120" height="30" class="d-inline-block align-top" alt=""></a>
+
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarContent" aria-controls="navbarContent"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarContent">
+					<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
+
+	
+		
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarSyntax"
+								data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Syntax</a>
+							<div class="dropdown-menu" aria-labelledby="navbarSyntax">
+		
+			
+								<a class="dropdown-item"
+									href="/headers/">Headers</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/opcodes/">Opcodes</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/modulations/">Modulations</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/modulations/envelope_generators">Envelope Generators</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/modulations/lfo">LFO</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/extensions/midi_ccs">Extended MIDI CCs</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/misc/categories">Types & Categories</a>
+			
+		
+							</div>
+	
+						</li>
+
+	
+		
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarSoftware"
+								data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Software</a>
+							<div class="dropdown-menu" aria-labelledby="navbarSoftware">
+		
+			
+								<a class="dropdown-item"
+									href="https://sfzinstruments.github.io">Instruments</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/software/players">Players</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/software/tools">Tools</a>
+			
+		
+							</div>
+	
+						</li>
+
+	
+		
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarTutorials"
+								data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Tutorials</a>
+							<div class="dropdown-menu" aria-labelledby="navbarTutorials">
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/basics">Basics</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/basic_sfz_file">Basic / Template</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/sustained_note_basics">Sustained Note Basics</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/vibrato">Vibrato</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/legato">Legato</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/unison">Unison</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/range_extension">Range extension</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/subtractive_synths">Subtractive Synthesizers</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/drum_basics">Drum Basics</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/brush_stirs">Brush Stirs</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/sfz1_modulations">SFZ 1 Modulations</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/sfz2_modulations">SFZ 2 Modulations</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/lfo">Pitch LFO Examples</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/videos">Video Tutorials</a>
+			
+		
+							</div>
+	
+						</li>
+
+	
+						<li class="nav-item">
+							<a class="nav-link"
+								href="/news"> News</a>
+	
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link"
+								href="/search/">
+								Search</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			<div class="row mt-4" id="content">
+				<div class="col-md-9">
+					<article><h1>Subtractive synthesizers</h1><h2 id="introduction">
+        
+        
+          Introduction <a href="#introduction" class="toc-anchor">#</a>
+        
+        
+      </h2>
+
+<p>This tutorial describes implementing typical subtractive synthesizer
+modulations - filters, envelopes and LFOs - in SFZ. It uses the
+Caveman Cosmonaut instrument by Karoryfer Samples as an example. This
+does not cover all modulations used in classic hardware subtractive
+synths, but it’s a start.</p>
+    
+      <h2 id="basic-amplifier-envelope">
+        
+        
+          Basic amplifier envelope <a href="#basic-amplifier-envelope" class="toc-anchor">#</a>
+        
+        
+      </h2>
+
+<p>Though subtractive synths get their name from having frequencies
+subtracted from the sound by filter, the volume envelope is probably
+the most fundamental modulation. Here is an <a href="/opcodes/ampeg_attack">AHDSR envelope</a> including
+<a href="/headers/control">control</a> parameter labels and defaults.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;control&gt;
+label_cc100=Attack time
+label_cc101=Hold time
+label_cc102=Decay time
+label_cc103=Sustain level
+label_cc104=Release time
+
+set_cc102=63
+set_cc103=51
+set_cc104=31
+
+&lt;global&gt;
+//AHDSR
+ampeg_attack=0.002
+ampeg_sustain=0
+ampeg_release=0.002
+ampeg_attack_oncc100=0.5
+ampeg_hold_oncc101=1
+ampeg_decay_oncc102=5
+ampeg_sustain_oncc103=100
+ampeg_release_oncc104=2
+</code></pre></div></div>
+
+<p>An ADSR envelope would simple leave out the <a href="/opcodes/ampeg_hold">hold</a> stage control,
+leaving the default hold time of zero.</p>
+    
+      <h2 id="further-envelope-possibilities">
+        
+        
+          Further envelope possibilities <a href="#further-envelope-possibilities" class="toc-anchor">#</a>
+        
+        
+      </h2>
+
+<p>The above envelope will affect all sounds, as it’s set at the global
+level. In many classic synths, it’s possible to have separate
+envelopes modulating the volume of different oscillators, for
+example using a shorter envelope to turn a noise oscillator into
+a short transient.</p>
+
+<p>If more envelope stages are required, an <a href="/modulations/envelope_generators">SFZ2 envelope</a> with an
+arbitrary amount of points can be used to modulate amplitude
+instead of the SFZ1 envelope above.</p>
+
+<p>In the ARIA SFZ player, amplifier envelope durations are calculated
+once on trigger, which means changing envelope parameters other than
+sustain and release while a note is playing will not change the sound.
+The <a href="/opcodes/ampeg_dynamic">ampeg_dynamic</a> opcode could be set to 1 in order to recalculate
+envelope parameters every time one of the control parameters receives
+a MIDI message, which could be closer to the behavior of most
+analog synthesizer hardware.</p>
+
+<p>Caveman Cosmonaut has a more unusual parameter called Env Soften,
+which has no effect on some oscillators which have more
+high-frequency content, and adds to the release and decay times
+of the warmer-sounding oscillators. This is highly unusual, but
+can be musically useful for things such as plucks, as the warmer
+sounds linger longer. This is similar to the effect of release
+or decay on a lowpass filter cutoff, but perhaps a little more
+organic. That’s set per oscillator, rather than globally, like
+this, with CC 18 selecting the oscillator, and CC 106 being the
+envelope soften:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;master&gt;
+locc18=11
+hicc18=20
+ampeg_decay_oncc106=1.25
+ampeg_release_oncc106=0.7
+#include "mappings/unitra_flutes.sfz"
+
+&lt;master&gt;
+locc18=21
+hicc18=30
+ampeg_decay_oncc106=1
+ampeg_release_oncc106=0.4
+#include "mappings/unitra_clarinet.sfz"
+
+&lt;master&gt;
+locc18=31
+hicc18=40
+ampeg_decay_oncc106=1.5
+ampeg_release_oncc106=0.6
+#include "mappings/unitra_trombone.sfz"
+
+&lt;master&gt;
+locc18=41
+hicc18=50
+ampeg_decay_oncc106=0.5
+ampeg_release_oncc106=0.2
+#include "mappings/unitra_trompette.sfz"
+
+&lt;master&gt;
+locc18=51
+hicc18=60
+ampeg_decay_oncc106=1.25
+ampeg_release_oncc106=0.5
+#include "mappings/unitra_violin.sfz"
+
+&lt;master&gt;
+locc18=61
+hicc18=70
+#include "mappings/unitra_tremolo.sfz"
+
+&lt;master&gt;
+locc18=71
+#include "mappings/unitra_all.sfz"
+</code></pre></div></div>
+    
+      <h2 id="basic-filter">
+        
+        
+          Basic filter <a href="#basic-filter" class="toc-anchor">#</a>
+        
+        
+      </h2>
+
+<p>The filter in the example instrument is a single <a href="/opcodes/fil_type">lowpass</a> filter
+with <a href="/opcodes/cutoff">cutoff</a> and <a href="/opcodes/resonance">resonance</a> controls,
+adjustable <a href="/extensions/midi_ccs">velocity</a> tracking using <a href="/opcodes/varNN_mod">var</a>
+a two-stage <a href="/opcodes/fileg_attack">filter cutoff envelope</a>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;control&gt;
+label_cc120=Filter cutoff
+label_cc121=Resonance
+label_cc124=Veltrack
+label_cc125=Pluck
+label_cc126=Filter attack
+label_cc127=Filter decay
+
+set_cc120=127
+set_cc127=40
+
+&lt;global&gt;
+//Lowpass filter
+cutoff=250
+cutoff_cc120=9600
+fil_keytrack=100
+resonance=0
+resonance_cc121=18
+var01_cutoff=6000 //Velocity track
+var01_mod=mult
+var01_oncc131=1
+var01_oncc124=1
+cutoff_cc124=-3000
+//Pluck envelope
+fileg_depth=0
+fileg_depthcc125=8400
+fileg_sustain=0
+fileg_attack=0
+fileg_attackcc126=0.5
+fileg_decay=0.001
+fileg_decaycc127=2
+</code></pre></div></div>
+    
+      <h2 id="filter-keytracking">
+        
+        
+          Filter keytracking <a href="#filter-keytracking" class="toc-anchor">#</a>
+        
+        
+      </h2>
+
+<p>Making the filter cutoff keytrack is a simple matter of
+setting the <a href="/opcodes/fil_keytrack">fil_keytrack</a> to 100; however, things get
+more complicated if filter keytracking is not desired.
+Although fil_keytrack can be set to 0 and the base
+filter cutoff will then not keytrack, the filter cutoff
+modulation in SFZ is specified in cents, not Hertz. This
+means the amount of the cutoff which is modulated will
+keytrack, regardless of what fil_keytrack is set to. This
+isn’t a big issue with most synthesizers, but when trying
+to make an adjustable highpass filter for all pieces of
+a drum kit except the kick, for example, it can make
+things complicated.</p>
+
+<p>Adjusting keytracking for the modulated amount requires
+using var and the extended CC 133 (MIDI key number).
+Var and extended CCs are already used above for the
+velocity tracking on the filter cutoff. The example instrument
+has a somewhat convoluted and unusual configuration for
+the filter keytracking, where when CC 120 has a very
+high value, the cutoff will be slightly above 22.05 kHz
+for all keys in the instrument’s range, while the cutoff
+when CC 120 is at zero has 70% keytracking. This is not
+at all standard, and means the base cutoff has moderate
+positive keytracking while the cutoff modulation has
+negative keytracking.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//By default, cutoff modulation is measured in cents
+//To make the modulation not keytrack, we make a kludge
+//Using var
+cutoff=250
+var02_cutoff=9000
+var02_mod=mult
+var02_oncc120=1
+var02_curvecc120=0
+var02_oncc133=1
+var02_curvecc133=11
+fil_keytrack=70
+</code></pre></div></div>
+
+<p>At the end of the SFZ file, the <a href="/headers/curve">curve</a> is then specified:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;curve&gt;
+curve_index=11
+v000=1
+v024=1
+v084=0.63
+v127=0.25
+</code></pre></div></div>
+    
+      <h2 id="more-filter-possibilities">
+        
+        
+          More filter possibilities <a href="#more-filter-possibilities" class="toc-anchor">#</a>
+        
+        
+      </h2>
+
+<p>It would be easy to have more filter envelope stages; only
+attack and decay are used above to keep things simple, as
+those parameters are enough to create basic plucks (zero
+attack, moderate decay) and 303 style basses (slightly
+longer attack, moderate decay).</p>
+
+<p>Using fil2_type and cutoff2 allows two filters in series,
+for example a lowpass and highpass filter. Fil_type can
+also be used to choose different filter types, perhaps with
+<a href="/opcodes/loccN">locc/hicc</a>.</p>
+
+<p>Modulating the filter cutoff with LFOs is added below, in the
+vibrato section.</p>
+    
+      <h2 id="vibrato">
+        
+        
+          Vibrato <a href="#vibrato" class="toc-anchor">#</a>
+        
+        
+      </h2>
+
+<p>Vibrato can affect pitch, volume (for tremolo) and filter cutoff
+(for wobble). Here is a typical setup using one <a href="/modulations/lfo">LFO</a> to modulate
+all three.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;control&gt;
+label_cc111=Vibrato to pitch
+label_cc112=Vibrato speed
+label_cc113=Vibrato to cutoff
+label_cc114=Vibrato to volume
+label_cc115=Vibrato delay
+label_cc116=Vibrato fade
+
+set_cc112=40
+
+&lt;global&gt;
+lfo01_pitch_oncc111=22 //Vibrato LFO
+lfo01_freq=0.1
+lfo01_freq_oncc112=9.9
+lfo01_delay_oncc115=0.500
+lfo01_fade_oncc116=0.500
+lfo01_volume_oncc114=6
+//Wobble
+lfo01_cutoff=0
+lfo01_cutoff_oncc113=3600
+</code></pre></div></div>
+    
+      <h2 id="humanized-vibrato">
+        
+        
+          Humanized vibrato <a href="#humanized-vibrato" class="toc-anchor">#</a>
+        
+        
+      </h2>
+
+<p>Humanization is obviously not a standard feature of synthesizers.
+Technically, though, it’s not difficult to implement.</p>
+
+<p>The example instrument adds CC 117 for controlling the
+amount of randomization
+of the vibrato LFOs. This is similar to the humanization
+described in the <a href="/tutorials/vibrato">vibrato tutorial</a>, but using CC 135 to
+generate a true random number for each voice, which
+means any unison voices’ vibrato will drift out of sync
+with those belonging to other voices. This is musically
+useful for creating more complex pads, for example. Similar
+principles could also be used to emulate analog oscillators’
+much more subtle pitch drift.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;control&gt;
+label_cc111=Vibrato to pitch
+label_cc112=Vibrato speed
+label_cc113=Vibrato to cutoff
+label_cc114=Vibrato to volume
+label_cc115=Vibrato delay
+label_cc116=Vibrato fade
+label_cc117=Vibrato humanize
+
+set_cc112=40
+
+&lt;global&gt;
+//Vibrato and humanization setup
+lfo01_pitch_oncc111=22 //Vibrato LFO
+lfo01_freq=0.1
+lfo01_freq_oncc112=9.9
+lfo01_delay_oncc115=0.500
+lfo01_fade_oncc116=0.500
+lfo01_volume_oncc114=6
+//Wobble
+lfo01_cutoff=0
+lfo01_cutoff_oncc113=3600
+
+lfo02_wave=1 //Second LFO to make things wobblier
+lfo02_phase=0
+lfo02_phase_oncc135=1 //Phase randomized
+lfo02_freq=0.01 //Basically no movement at very slow speeds, just randomization
+lfo02_freq_oncc117=1 //Max rate is not very high, so it doesn't sound too obvious
+lfo02_pitch_oncc117=6 //Slight pitch wobbliness
+lfo02_freq_lfo01_oncc117=0.5 //Affect the rate of the other LFO for unsteady vibrato
+lfo02_freq_lfo01_oncc112=2.5 //Faster when the first LFO is going faster
+
+lfo03_wave=1 //And a third LFO for secondhand complex wobbliness
+lfo03_phase=0.4
+lfo03_phase_oncc135=0.179 //Different phase response to random than the second LFO
+lfo03_freq=0.5
+lfo03_freq_oncc117=-0.4
+lfo03_freq_lfo2_oncc117=1
+lfo03_pitch_oncc117=-4
+
+lfo04_wave=1 //Fourth LFO for slowly changing the oscillator mix
+lfo04_phase_oncc135=1
+lfo04_freq=0.01
+lfo04_freq_oncc135=0.25 //Randomly from almost not moving at all to still pretty slow
+lfo04_volume_oncc117=1.5 //Slight volume changes
+</code></pre></div></div>
+    
+      <h2 id="unison-and-detune">
+        
+        
+          Unison and detune <a href="#unison-and-detune" class="toc-anchor">#</a>
+        
+        
+      </h2>
+
+<p>Unison is a simple matter of triggering multiple regions
+with one MIDI note. If using a simple sound source such
+as a saw oscillators, all regions will sound identical so
+the only result will be additional volume. Making the
+unison more interesting requires some of: using different
+samples for each voice, detuning the voices, and shifting
+the phase of the voices.</p>
+
+<p>The example instrument uses many sets of samples from an
+analog keyboard, with every key producing a slightly
+different timbre, and transposed versions of those sounds
+used for unison. The <a href="/opcodes/pitch_onccN">detune</a> and width amounts vary for
+each of the three oscillators, but here is a simplified
+version assuming there is only one oscillator.</p>
+
+<p>Note that although there is a <a href="/opcodes/width">width</a> opcodes for
+use with stereo samples, in this case the left channel and right are
+separate mono samples, so <a href="/opcodes/pan">pan</a> is used to spread them
+in stereo - not width.</p>
+
+<p>As the samples here are quite long, <a href="/opcodes/offset_random">offset_random</a>
+is applied globally to effecitvely randomize each voice’s phase. With
+true single-cycle waveforms, the max offset would have to be set to
+match each voice’s max sample length.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;control&gt;
+label_cc25=Unison
+label_cc26=Width
+label_cc27=Detune
+
+set_cc26=63
+set_cc27=63
+
+&lt;global&gt;
+//Randomizing the start points of the samples to randomize phase
+offset_random=1000
+
+//Center voice
+&lt;master&gt;
+#include "sample_map_basic.sfz"
+
+//Left voice
+&lt;region&gt;
+amplitude_cc25=100
+amplitude_cc25=100
+locc25=1
+pan_cc26=-100
+tune_cc27=-33
+#include "sample_map_transposed_1.sfz"
+
+//Right voice
+&lt;region&gt;
+amplitude_cc25=100
+locc25=1
+pan_cc26=100
+tune_cc27=33
+amplitude_cc25=100
+#include "sample_map_transposed_2.sfz"
+</code></pre></div></div>
+    
+      <h2 id="more-complex-detune">
+        
+        
+          More complex detune <a href="#more-complex-detune" class="toc-anchor">#</a>
+        
+        
+      </h2>
+
+<p>Another highly unsual feature of Caveman Cosmonaut, though, is
+that the detune doesn’t have to be fixed. There are additional
+detune controls which detune the additional voices more at the
+start of the note, and then drift towards a common pitch over
+time, using <a href="/opcodes/pitcheg_attack">pitch envelopes</a>. This is definitely not part of
+any typical hardware analog synthesizer’s feature set, but it
+does have something in common with the way real world choirs
+or instrumental ensembles find a commmon pitch.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;control&gt;
+label_cc25=Unison
+label_cc26=Width
+label_cc27=Detune
+label_cc28=Extra detune amt
+label_cc29=Extra detune time
+
+set_cc26=63
+set_cc27=63
+set_cc29=16
+
+&lt;global&gt;
+//Randomizing the start points of the samples to randomize phase
+offset_random=1000
+
+//Pitch envelope defaults for the fancy detune
+pitcheg_sustain=0
+pitcheg_decay_shape=-2
+
+//Center voice
+&lt;master&gt;
+#include "sample_map_basic.sfz"
+
+//Left voice
+&lt;region&gt;
+amplitude_cc25=100
+locc25=1
+pan_cc26=-100
+tune_cc27=-33
+pitcheg_depth_oncc28=-150
+pitcheg_decay_oncc29=5
+#include "sample_map_transposed_1.sfz"
+
+//Right voice
+&lt;region&gt;
+amplitude_cc25=100
+locc25=1
+pan_cc26=100
+tune_cc27=33
+pitcheg_depth_oncc28=150
+pitcheg_decay_oncc29=5
+#include "sample_map_transposed_2.sfz"
+</code></pre></div></div>
+    
+      <h2 id="waveform-selection-and-oscillator-mixing">
+        
+        
+          Waveform selection and oscillator mixing <a href="#waveform-selection-and-oscillator-mixing" class="toc-anchor">#</a>
+        
+        
+      </h2>
+
+<p>This is just locc/hicc for selection, and <a href="/opcodes/amplitude">amplitude</a> for volume
+controls.</p>
+    
+      <h2 id="mono-mode-and-portamento">
+        
+        
+          Mono mode and portamento <a href="#mono-mode-and-portamento" class="toc-anchor">#</a>
+        
+        
+      </h2>
+
+<p>This is implemented similarly to any non-synth - see our <a href="/tutorials/legato">legato
+tutorial</a>.</p>
+    
+      <h2 id="putting-it-all-together">
+        
+        
+          Putting it all together <a href="#putting-it-all-together" class="toc-anchor">#</a>
+        
+        
+      </h2>
+
+<p>This is the main file for the example instrument. The unison and detune
+settings, along with oscillator selection and mixing, are inside SFZ files
+added via the <a href="/opcodes/include">include</a> directives.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;control&gt;
+label_cc15=Bass Osc Vol
+label_cc16=Bass Osc Sel
+label_cc17=Osc 1 Vol
+label_cc18=Osc 1 Sel
+label_cc19=Osc 2 Vol
+label_cc20=Osc 2 Sel
+label_cc21=Osc 3 Vol
+label_cc22=Osc 3 Sel
+label_cc25=Unison
+label_cc26=Width
+label_cc27=Detune
+label_cc28=Extra detune amt
+label_cc29=Extra detune time
+label_cc100=Attack time
+label_cc101=Hold time
+label_cc102=Decay time
+label_cc103=Sustain level
+label_cc104=Release time
+label_cc106=Env soften
+label_cc108=Legato switch
+label_cc109=Porta time
+label_cc111=Vibrato to pitch
+label_cc112=Vibrato speed
+label_cc113=Vibrato to cutoff
+label_cc114=Vibrato to volume
+label_cc115=Vibrato delay
+label_cc116=Vibrato fade
+label_cc117=Unsteadiness
+label_cc120=Filter cutoff
+label_cc121=Resonance
+label_cc124=Veltrack
+label_cc125=Pluck
+label_cc126=Filter attack
+label_cc127=Filter decay
+
+set_cc15=100
+set_cc16=15
+set_cc17=127
+set_cc18=63
+set_cc19=100
+set_cc20=15
+set_cc21=100
+set_cc22=44
+set_cc26=63
+set_cc27=63
+set_cc29=16
+set_cc102=63
+set_cc103=51
+set_cc104=31
+set_cc109=31
+set_cc112=40
+set_cc120=127
+set_cc127=40
+
+&lt;global&gt;
+bend_down=-2400
+bend_up=2400
+off_mode=normal
+loop_mode=continuous
+offset=10000
+offset_random=1000
+
+//AHDSR
+ampeg_attack=0.002
+ampeg_sustain=0
+ampeg_release=0.002
+ampeg_attack_oncc100=0.5
+ampeg_hold_oncc101=1
+ampeg_decay_oncc102=5
+ampeg_sustain_oncc103=100
+ampeg_release_oncc104=2
+//Decay and release are affected by the soften parameter also
+//This is set separately for each oscillator
+
+//Filter
+//Lowpass filter
+//By default, cutoff modulation is measured in cents
+//To make the modulation not keytrack, we make a kludge
+//Using var
+cutoff=250
+var02_cutoff=9000
+var02_mod=mult
+var02_oncc120=1
+var02_curvecc120=0
+var02_oncc133=1
+var02_curvecc133=11
+fil_keytrack=70
+resonance=0
+resonance_cc121=18
+var01_cutoff=6000 //Velocity track
+var01_mod=mult
+var01_oncc131=1
+var01_oncc124=1
+cutoff_cc124=-3000
+//Pluck envelope
+fileg_depth=0
+fileg_depthcc125=8400
+fileg_sustain=0
+fileg_attack=0
+fileg_attackcc126=0.5
+fileg_decay=0.001
+fileg_decaycc127=2
+
+//Vibrato and humanization setup
+lfo01_pitch_oncc111=22 //Vibrato LFO
+lfo01_freq=0.1
+lfo01_freq_oncc112=9.9
+lfo01_delay_oncc115=0.500
+lfo01_fade_oncc116=0.500
+lfo01_volume_oncc114=6
+//Wobble
+lfo01_cutoff=0
+lfo01_cutoff_oncc113=3600
+
+lfo02_wave=1 //Second LFO to make things wobblier
+lfo02_phase=0
+lfo02_phase_oncc135=1 //Phase randomized
+lfo02_freq=0.01 //Basically no movement at very slow speeds, just randomization
+lfo02_freq_oncc117=1 //Max rate is not very high, so it doesn't sound too obvious
+lfo02_pitch_oncc117=6 //Slight pitch wobbliness
+lfo02_freq_lfo01_oncc117=0.5 //Affect the rate of the other LFO for unsteady vibrato
+lfo02_freq_lfo01_oncc112=2.5 //Faster when the first LFO is going faster
+
+lfo03_wave=1 //And a third LFO for secondhand complex wobbliness
+lfo03_phase=0.4
+lfo03_phase_oncc135=0.179 //Different phase response to random than the second LFO
+lfo03_freq=0.5
+lfo03_freq_oncc117=-0.4
+lfo03_freq_lfo2_oncc117=1
+lfo03_pitch_oncc117=-4
+
+lfo04_wave=1 //Fourth LFO for slowly changing the oscillator mix
+lfo04_phase_oncc135=1
+lfo04_freq=0.01
+lfo04_freq_oncc135=0.25 //Randomly from almost not moving at all to still pretty slow
+lfo04_volume_oncc117=1.5 //Slight volume changes
+
+//Some defaults for the fancy detune stuff
+pitcheg_sustain=0
+pitcheg_decay_shape=-2
+
+//And here come the oscillator mappings
+//First polyphonic mode
+
+#include "mappings/poly_map.sfz"
+
+#include "mappings/mono_first_map.sfz"
+
+#include "mappings/mono_legato_map.sfz"
+
+&lt;curve&gt;
+curve_index=11
+v000=1
+v024=1
+v084=0.63
+v127=0.25
+</code></pre></div></div>
+					</article>
+				</div>
+				<div class="col-md-3">
+					<aside>
+
+	
+						<div class="card border-dark mb-3">
+							<div class="card-header text-light"
+								style="background-color:#222">
+								<i class="fas fa-eye"
+									aria-hidden="true"></i>
+								Follow us
+							</div>
+							<div class="card-body" style="padding: 0.5rem">
+								<ul class="nav nav-pills flex-column">
+	<li class="nav-item">
+										<a class="nav-link" href="https://discord.gg/t7nrZ6d"
+											title="Discord Chat" style="padding: 0.35rem 0.25rem">
+										<i class="fab fa-discord fa-fw"
+										aria-hidden="true"></i>
+										Discord Chat</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://kiwiirc.com/nextclient/#irc://irc.freenode.net:+6697/#sfzformat"
+											title="Internet Relay Chat" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-hashtag fa-fw"
+										aria-hidden="true"></i>
+										IRC</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://github.com/sfzformat/"
+											title="GitHub Organization" style="padding: 0.35rem 0.25rem">
+										<i class="fab fa-github fa-fw"
+										aria-hidden="true"></i>
+										GitHub Organization</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="/atom.xml"
+											title="News Atom Feed" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-rss fa-fw"
+										aria-hidden="true"></i>
+										News Atom Feed</a>
+									</li>
+	
+								</ul>
+							</div>
+						</div>
+
+						<div class="card border-dark mb-3">
+							<div class="card-header text-light"
+								style="background-color:#222">
+								<i class="fas fa-link"
+									aria-hidden="true"></i>
+								Quick links
+							</div>
+							<div class="card-body" style="padding: 0.5rem">
+								<ul class="nav nav-pills flex-column">
+	<li class="nav-item">
+										<a class="nav-link" href="/legacy"
+											title="Old rgc:audio SFZ page" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-book fa-fw"
+										aria-hidden="true"></i>
+										Old rgc:audio SFZ page</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="http://www.drealm.info/sfz/"
+											title="Peter L. Jones' SFZ page" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-book fa-fw"
+										aria-hidden="true"></i>
+										Peter L. Jones' SFZ page</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://www.kvraudio.com/forum/viewtopic.php?f=42&t=508861"
+											title="KVR Forum SFZ post" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-users fa-fw"
+										aria-hidden="true"></i>
+										KVR Forum SFZ post</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://www.plogue.com/plgfrms/viewforum.php?f=14"
+											title="Plogue Forum" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-users fa-fw"
+										aria-hidden="true"></i>
+										Plogue Forum</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://sfzinstruments.github.io/"
+											title="Free SFZ Instruments" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-download fa-fw"
+										aria-hidden="true"></i>
+										Free SFZ Instruments</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://github.com/sfz/tests/"
+											title="rgc:audio SFZ test suite" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-download fa-fw"
+										aria-hidden="true"></i>
+										rgc:audio SFZ test suite</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://github.com/sfz/opcode-suggestions/"
+											title="Opcode suggestions" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-lightbulb fa-fw"
+										aria-hidden="true"></i>
+										Opcode suggestions</a>
+									</li>
+	
+								</ul>
+							</div>
+						</div>
+
+
+
+					</aside>
+				</div>
+			</div>
+			<hr>
+			<footer>
+				<p>
+					This site is open source.
+					<a href="https://github.com/sfzformat/sfzformat.github.io/edit/source/tutorials/subtractive_synths.md">
+					Improve this page</a>
+				</p>
+			</footer>
+
+		</div>
+		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
+		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
+		<script>
+			$(document).ready(function(){
+			$('pre').addClass('prettyprint lang-sfz');
+			prettyPrint();
+			});
+		</script>
+		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+		<script>
+		$(document).on('click', '[data-toggle="lightbox"]', function(event) {
+			event.preventDefault();
+			$(this).ekkoLightbox({
+				alwaysShowClose: true
+			});
+		});
+		</script>
+
+
+	</body>
+</html>
